@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="- gtest">
+      <UniqueIdentifier>{5fd19141-cce3-497f-9253-3db0d61fd9ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="- Demo_4">
+      <UniqueIdentifier>{f8179377-1973-43e7-b59c-10586360e851}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="- Demo_4\- Core">
+      <UniqueIdentifier>{17dddb0c-77d5-4d21-b23c-ef3501caa843}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\gtest\gtest-all.cc">
+      <Filter>- gtest</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\gtest\gtest_main.cc">
+      <Filter>- gtest</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Demo_4\Core\StringPath_unittest.cpp">
+      <Filter>- Demo_4\- Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Demo_4\Core\bitop_unittest.cpp">
+      <Filter>- Demo_4\- Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Demo_4\Core\Delegate_unittest.cpp">
+      <Filter>- Demo_4\- Core</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\gtest\gtest.h">
+      <Filter>- gtest</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

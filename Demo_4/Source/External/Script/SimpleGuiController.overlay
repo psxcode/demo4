@@ -1,0 +1,29 @@
+DemoGUI/DebugMainPanel
+{
+	zorder 500
+	container BorderPanel(DemoGUI/StatPanel)
+	{
+		metrics_mode pixels	
+		vert_align top
+		horz_align left
+		left 0
+		top 0
+		width 300
+		height 300
+		material DemoGUI/DebugPanelMaterial
+    	    	border_size 1 1 1 1
+
+		element TextArea(DemoGUI/Stats)
+		{
+			metrics_mode pixels
+			left 5
+			top 5
+			width 90
+			height 30
+			font_name BlueHighway
+			char_height 16
+			colour_top 0.5 0.7 0.5
+			colour_bottom 0.3 0.5 0.3
+		}
+	}
+}

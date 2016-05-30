@@ -1,0 +1,903 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="+ Core">
+      <UniqueIdentifier>{167d8c28-8263-43df-9a58-f7b66f2cfb4a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ Core\- controller">
+      <UniqueIdentifier>{528307be-c2c3-470f-88b9-000f789f1a8b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ Core\- delegate">
+      <UniqueIdentifier>{74037f8d-6cb5-4636-9dce-25e41a9ce2a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ Core\- event">
+      <UniqueIdentifier>{d94d3896-9bea-4015-a766-d8dd51385bb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ System">
+      <UniqueIdentifier>{ea907ea9-2454-49db-983a-d73c6839cfab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ System\- collection">
+      <UniqueIdentifier>{6d47aad2-1485-4ee9-961e-63a9fb6d038d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ System\- interface">
+      <UniqueIdentifier>{44107972-daf6-4e60-aa12-d11aa2245226}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ System\- controllers">
+      <UniqueIdentifier>{58535f09-7acb-43ec-93a4-32287c4eb5bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ System\- render">
+      <UniqueIdentifier>{f30e1b11-617c-42e3-b9f7-6b549ba4c444}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="- External">
+      <UniqueIdentifier>{df3b4f9d-eb11-4378-bef0-59eb28146e65}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="- External\- Code">
+      <UniqueIdentifier>{5c8b10f0-87c8-4311-bb15-3e02181c801e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="- External\- Code\- PhysX">
+      <UniqueIdentifier>{51ee4178-1793-4d38-a9c6-a8312153e235}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="- External\- Script">
+      <UniqueIdentifier>{7967321e-277f-4d7f-9684-672d2e311c9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ Vehicle">
+      <UniqueIdentifier>{0fd18d08-8318-4adb-a6a1-a4f6db6715e6}</UniqueIdentifier>
+      <ParseFiles>false</ParseFiles>
+    </Filter>
+    <Filter Include="- GameObjects">
+      <UniqueIdentifier>{2ca142ff-e94f-490c-ae5f-bade2553a2c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="- GameObjects\- camera">
+      <UniqueIdentifier>{ac2dd89a-c6d2-47c4-b295-6bdf6ea030b3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ Archive">
+      <UniqueIdentifier>{8cab80c9-4688-4edd-8dfd-b92900aece43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="- External\- Code\- OgreCEGUI">
+      <UniqueIdentifier>{1dd6370b-00ac-4048-b6fc-ebfcb10ddc6a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="- External\- Code\- OgreModified">
+      <UniqueIdentifier>{9ab145e2-8f21-4403-98c5-658516b63e76}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ Vehicle\- PhysX">
+      <UniqueIdentifier>{4fd7d8d3-e71b-49ed-91ac-3f233bbea47f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ Vehicle\- Abstact">
+      <UniqueIdentifier>{dd20caac-8b02-4c2c-baa2-24573dabe62d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ Vehicle\- Driver">
+      <UniqueIdentifier>{ffabc813-e9cc-4968-ba65-476beb11e4dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ Vehicle\- Abstact\- axle">
+      <UniqueIdentifier>{1b3020db-a91f-4389-bffb-d0c53f66a15d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ Vehicle\- Abstact\- brake">
+      <UniqueIdentifier>{84c4ef01-b582-4f0e-ad03-e7cbca9c7f73}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ Vehicle\- Abstact\- mechanics">
+      <UniqueIdentifier>{5184f7f5-ac81-4b3f-988d-20df81f0dc61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ Vehicle\- Abstact\- mechanics\- motor">
+      <UniqueIdentifier>{ae7e1b94-8952-4e49-840b-c470f522eab1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ Vehicle\- Abstact\- mechanics\- differential">
+      <UniqueIdentifier>{8d2f2b18-3126-4d73-8408-f69858921c84}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ Vehicle\- Abstact\- mechanics\- gearbox">
+      <UniqueIdentifier>{c31ff6a8-60b8-445c-9749-d7f564ad473e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ Vehicle\- Abstact\- mechanics\- flywheel">
+      <UniqueIdentifier>{978cb793-d953-4b5f-8782-b07b13a5f7b9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ Vehicle\- Abstact\- mechanics\- wheelNode">
+      <UniqueIdentifier>{51549cbf-8be9-4c2b-85d0-9fe86a08132f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ Vehicle\- Abstact\- pedal">
+      <UniqueIdentifier>{fdf10a80-7c9b-4e4f-b311-e1bdf678e961}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ Vehicle\- Abstact\- radPSController">
+      <UniqueIdentifier>{007e41b0-8840-4d95-8239-77b04734d42c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ Vehicle\- Abstact\- speedometer">
+      <UniqueIdentifier>{b1634691-5781-499c-92ec-3506accb1bdb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ Vehicle\- Abstact\- steer">
+      <UniqueIdentifier>{dd5eaaff-0f7a-4514-8f0b-96adb4650274}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ Vehicle\- Abstact\- throttle">
+      <UniqueIdentifier>{70ec7b40-2349-4b55-9217-9117827ab82e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ Vehicle\- PhysX\- axle">
+      <UniqueIdentifier>{d7a7e8d3-f656-41e6-9ec4-374d8e125d7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ Vehicle\- PhysX\- wheelNode">
+      <UniqueIdentifier>{62206280-8e47-453d-ab3d-f1f681558611}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="- Interface">
+      <UniqueIdentifier>{f1fb79d9-0f40-4f3f-9aaa-c267f98b1d2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ System\- factory">
+      <UniqueIdentifier>{0c5be786-a7c2-42f4-86c1-c843b7958d9c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="+ System\- dotScene">
+      <UniqueIdentifier>{2a7b8cc5-8044-49a0-83b7-106879748af0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Nxu">
+      <UniqueIdentifier>{63f8742a-d100-466a-a9e6-7a8b363a8009}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="TinyXml">
+      <UniqueIdentifier>{ade13df1-7974-4f90-a83e-35e5d04725eb}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Source\Core\RangeVar.h">
+      <Filter>+ Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\StringPath.h">
+      <Filter>+ Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\ValueByValue.h">
+      <Filter>+ Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\ValueFilter.h">
+      <Filter>+ Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\Controller.h">
+      <Filter>+ Core\- controller</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\DelTimer.h">
+      <Filter>+ Core\- delegate</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\Event.h">
+      <Filter>+ Core\- event</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\shared_ptr_traits.h" />
+    <ClInclude Include="Source\Core\bitop.h">
+      <Filter>+ Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Code\OgreCEGUI\OgreCEGUIRenderer.h">
+      <Filter>- External\- Code\- OgreCEGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Code\OgreCEGUI\OgreCEGUIResourceProvider.h">
+      <Filter>- External\- Code\- OgreCEGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Code\OgreCEGUI\OgreCEGUITexture.h">
+      <Filter>- External\- Code\- OgreCEGUI</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\collection_traits.h">
+      <Filter>+ System\- collection</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\PhysXParamsCollection.h">
+      <Filter>+ System\- collection</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\SceneParamsCollection.h">
+      <Filter>+ System\- collection</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\VehicleParamsCollection.h">
+      <Filter>+ System\- collection</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\OgreController.h">
+      <Filter>+ System\- controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\MainController.h">
+      <Filter>+ System\- controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\InputController.h">
+      <Filter>+ System\- controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\SystemInterface.h">
+      <Filter>+ System\- interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\NullSchemeHandler.h">
+      <Filter>+ System\- render</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\MaterialGeneratorManager.h">
+      <Filter>+ System\- render</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\MaterialGenerator.h">
+      <Filter>+ System\- render</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\LightShapeGeom.h">
+      <Filter>+ System\- render</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\GBufferSchemeHandler.h">
+      <Filter>+ System\- render</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\DLightCP.h">
+      <Filter>+ System\- render</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\DLight.h">
+      <Filter>+ System\- render</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\DeferredMaterialGenerator.h">
+      <Filter>+ System\- render</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Code\PhysX\Stream.h">
+      <Filter>- External\- Code\- PhysX</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Driver\AutoGearboxController.h">
+      <Filter>+ Vehicle\- Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Driver\drive_options.h">
+      <Filter>+ Vehicle\- Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Driver\GearboxController.h">
+      <Filter>+ Vehicle\- Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Driver\IGearboxController.h">
+      <Filter>+ Vehicle\- Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Driver\IGearboxControllerState.h">
+      <Filter>+ Vehicle\- Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Driver\MechGearboxController.h">
+      <Filter>+ Vehicle\- Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Driver\VehicleDriver.h">
+      <Filter>+ Vehicle\- Driver</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\PhysX\PhysXTypes.h">
+      <Filter>+ Vehicle\- PhysX</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\PhysX\PhysXVehicle.h">
+      <Filter>+ Vehicle\- PhysX</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\PhysX\PhysXVehicleBodyParams.h">
+      <Filter>+ Vehicle\- PhysX</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\PhysX\PhysXVehicleSetParams.h">
+      <Filter>+ Vehicle\- PhysX</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\PhysX\PhysXVehicleAxle.h">
+      <Filter>+ Vehicle\- PhysX\- axle</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\VehicleAxle.h">
+      <Filter>+ Vehicle\- Abstact\- axle</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\BrakeBlock.h">
+      <Filter>+ Vehicle\- Abstact\- brake</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\BrakeControl.h">
+      <Filter>+ Vehicle\- Abstact\- brake</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\IMechanicsState.h">
+      <Filter>+ Vehicle\- Abstact\- mechanics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\Mechanics.h">
+      <Filter>+ Vehicle\- Abstact\- mechanics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\mechanics_enums.h">
+      <Filter>+ Vehicle\- Abstact\- mechanics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\MechanicsParams.h">
+      <Filter>+ Vehicle\- Abstact\- mechanics</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\PhysX\PhysXWheelNode.h">
+      <Filter>+ Vehicle\- PhysX\- wheelNode</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\PhysX\PhysXWheelNodeParams.h">
+      <Filter>+ Vehicle\- PhysX\- wheelNode</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\WheelNode.h">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- wheelNode</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\IMotor.h">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- motor</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\IMotorCallback.h">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- motor</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\IMotorControl.h">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- motor</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\IMotorState.h">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- motor</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\Motor.h">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- motor</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\MotorParams.h">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- motor</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\AutoGearbox.h">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- gearbox</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\AutoGearboxModeMap.h">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- gearbox</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\Gearbox.h">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- gearbox</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\GearboxParams.h">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- gearbox</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\IGearbox.h">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- gearbox</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\IGearboxCallback.h">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- gearbox</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\IGearboxControl.h">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- gearbox</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\IGearboxState.h">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- gearbox</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\MechGearbox.h">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- gearbox</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\Flywheel.h">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- flywheel</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\FlywheelParams.h">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- flywheel</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\Differential.h">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- differential</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\DifferentialParams.h">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- differential</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\IPedal.h">
+      <Filter>+ Vehicle\- Abstact\- pedal</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\IPedalCallback.h">
+      <Filter>+ Vehicle\- Abstact\- pedal</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\IPedalControl.h">
+      <Filter>+ Vehicle\- Abstact\- pedal</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\IPedalState.h">
+      <Filter>+ Vehicle\- Abstact\- pedal</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\pedal_enums.h">
+      <Filter>+ Vehicle\- Abstact\- pedal</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\PedalFilter.h">
+      <Filter>+ Vehicle\- Abstact\- pedal</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\RadPSController.h">
+      <Filter>+ Vehicle\- Abstact\- radPSController</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\RadPSControllerTypes.h">
+      <Filter>+ Vehicle\- Abstact\- radPSController</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\RadPSTiming.h">
+      <Filter>+ Vehicle\- Abstact\- radPSController</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\ISpeedometerState.h">
+      <Filter>+ Vehicle\- Abstact\- speedometer</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\Speedometer.h">
+      <Filter>+ Vehicle\- Abstact\- speedometer</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\SpeedometerParams.h">
+      <Filter>+ Vehicle\- Abstact\- speedometer</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\SteerControl.h">
+      <Filter>+ Vehicle\- Abstact\- steer</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\ThrottleControl.h">
+      <Filter>+ Vehicle\- Abstact\- throttle</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\ThrottleControlParams.h">
+      <Filter>+ Vehicle\- Abstact\- throttle</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\BaseVehicle.h">
+      <Filter>+ Vehicle\- Abstact</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\DriverTiming.h">
+      <Filter>+ Vehicle\- Abstact</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\DriveStyleCalculator.h">
+      <Filter>+ Vehicle\- Abstact</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\MotorChart.h">
+      <Filter>+ Vehicle\- Abstact</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\SpeedToGearCalculator.h">
+      <Filter>+ Vehicle\- Abstact</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\VehicleToDriverData.h">
+      <Filter>+ Vehicle\- Abstact</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\VehicleTypes.h">
+      <Filter>+ Vehicle\- Abstact</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GameObjects\DemoSceneController.h">
+      <Filter>- GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GameObjects\DRTest01.h">
+      <Filter>- GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GameObjects\SimpleGuiController.h">
+      <Filter>- GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GameObjects\OrbitCameraController.h">
+      <Filter>- GameObjects\- camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GameObjects\BaseCameraController.h">
+      <Filter>- GameObjects\- camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\NxuPhysXCollection.h">
+      <Filter>+ System\- collection</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Interface\InputInterface.h">
+      <Filter>- Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DemoPrerequisites.h" />
+    <ClInclude Include="Source\DemoBuildSettings.h" />
+    <ClInclude Include="Source\System\SceneCollectionInterface.h">
+      <Filter>+ System\- collection</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\DefaultSceneCollection.h">
+      <Filter>+ System\- collection</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\VehicleCollectionInterface.h">
+      <Filter>+ System\- collection</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\DefaultVehicleCollection.h">
+      <Filter>+ System\- collection</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Interface\UnitConverter.h">
+      <Filter>- Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\DistanceUnitInterface.h">
+      <Filter>+ System\- interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\NxuCollectionInterface.h">
+      <Filter>+ System\- collection</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\DefaultNxuCollection.h">
+      <Filter>+ System\- collection</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Archive\DemoArchive.h">
+      <Filter>+ Archive</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\FastDelegate.h">
+      <Filter>+ Core\- delegate</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\delegate_traits.h" />
+    <ClInclude Include="Source\Interface\FactoryInterface.h">
+      <Filter>- Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\Factory.h">
+      <Filter>+ System\- factory</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\PhysXInterface.h">
+      <Filter>+ System\- interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\OgreInterface.h">
+      <Filter>+ System\- interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Code\TagCounter.h">
+      <Filter>- External\- Code</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\Tagged.h">
+      <Filter>+ Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\event_enums.h">
+      <Filter>+ Core\- event</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Core\Callback.h">
+      <Filter>+ Core\- event</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\input_traits.h" />
+    <ClInclude Include="Source\type_traits.h" />
+    <ClInclude Include="Source\External\Code\OgreModified\O_SharedPtr.h">
+      <Filter>- External\- Code\- OgreModified</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Code\OgreModified\O_IteratorWrapper.h">
+      <Filter>- External\- Code\- OgreModified</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\External\Code\OgreModified\O_String.h">
+      <Filter>- External\- Code\- OgreModified</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Interface\OgrePhysXConverter.h">
+      <Filter>- Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\PhysXCooker.h">
+      <Filter>+ System\- interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Interface\OgreProcedural.h">
+      <Filter>- Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\GameObjects\SdkCameraMan.h">
+      <Filter>- GameObjects</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\dsLoader.h">
+      <Filter>+ System\- dotScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\dsSceneTypes.h">
+      <Filter>+ System\- dotScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\dsSceneTypesLoader.h">
+      <Filter>+ System\- dotScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\dsVehicleTypes.h">
+      <Filter>+ System\- dotScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\dsVehicleTypesLoader.h">
+      <Filter>+ System\- dotScene</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\DemoStableHeaders.h" />
+    <ClInclude Include="Source\Nxu\NXU_Asc2Bin.h">
+      <Filter>Nxu</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Nxu\NXU_cooking.h">
+      <Filter>Nxu</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Nxu\NXU_customcopy.h">
+      <Filter>Nxu</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Nxu\NXU_File.h">
+      <Filter>Nxu</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Nxu\NXU_Geometry.h">
+      <Filter>Nxu</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Nxu\NXU_GraphicsMesh.h">
+      <Filter>Nxu</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Nxu\NXU_helper.h">
+      <Filter>Nxu</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Nxu\NXU_hull.h">
+      <Filter>Nxu</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Nxu\NXU_OgreDataStream.h">
+      <Filter>Nxu</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Nxu\NXU_PhysicsExport.h">
+      <Filter>Nxu</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Nxu\NXU_PhysicsInstantiator.h">
+      <Filter>Nxu</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Nxu\NXU_ScaledCopy.h">
+      <Filter>Nxu</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Nxu\NXU_schema.h">
+      <Filter>Nxu</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Nxu\NXU_SchemaStream.h">
+      <Filter>Nxu</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Nxu\NXU_SchemaTypes.h">
+      <Filter>Nxu</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Nxu\NXU_Streaming.h">
+      <Filter>Nxu</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Nxu\NXU_string.h">
+      <Filter>Nxu</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\TinyXml\tinyxml.h">
+      <Filter>TinyXml</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\DeferredShadingSystem.h">
+      <Filter>+ System\- render</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\FactoryCollectionService.h">
+      <Filter>+ System\- controllers</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\Interface\DebugDrawer.h">
+      <Filter>- Interface</Filter>
+    </ClInclude>
+    <ClInclude Include="Source\System\dsAssetTypes.h">
+      <Filter>+ System\- dotScene</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Core\StringPath.cpp">
+      <Filter>+ Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Core\Controller.cpp">
+      <Filter>+ Core\- controller</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\PhysXParamsCollection.cpp">
+      <Filter>+ System\- collection</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\SceneParamsCollection.cpp">
+      <Filter>+ System\- collection</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\VehicleParamsCollection.cpp">
+      <Filter>+ System\- collection</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\SystemInterface.cpp">
+      <Filter>+ System\- interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\InputController.cpp">
+      <Filter>+ System\- controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\MainController.cpp">
+      <Filter>+ System\- controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\OgreController.cpp">
+      <Filter>+ System\- controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\PhysXController.cpp">
+      <Filter>+ System\- controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\DeferredMaterialGenerator.cpp">
+      <Filter>+ System\- render</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\DLight.cpp">
+      <Filter>+ System\- render</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\DLightCP.cpp">
+      <Filter>+ System\- render</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\GBufferSchemeHandler.cpp">
+      <Filter>+ System\- render</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\LightShapeGeom.cpp">
+      <Filter>+ System\- render</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\MaterialGenerator.cpp">
+      <Filter>+ System\- render</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\MaterialGeneratorManager.cpp">
+      <Filter>+ System\- render</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\External\Code\PhysX\Stream.cpp">
+      <Filter>- External\- Code\- PhysX</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GameObjects\DemoSceneController.cpp">
+      <Filter>- GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GameObjects\DRTest01.cpp">
+      <Filter>- GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GameObjects\SimpleGuiController.cpp">
+      <Filter>- GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GameObjects\OrbitCameraController.cpp">
+      <Filter>- GameObjects\- camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Archive\DemoArchive.cpp">
+      <Filter>+ Archive</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\main.cpp" />
+    <ClCompile Include="Source\Vehicle\Driver\AutoGearboxController.cpp">
+      <Filter>+ Vehicle\- Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Driver\GearboxController.cpp">
+      <Filter>+ Vehicle\- Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Driver\IGearboxControllerState.cpp">
+      <Filter>+ Vehicle\- Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Driver\MechGearboxController.cpp">
+      <Filter>+ Vehicle\- Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Driver\VehicleDriver.cpp">
+      <Filter>+ Vehicle\- Driver</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\BrakeBlock.cpp">
+      <Filter>+ Vehicle\- Abstact\- brake</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\BrakeControl.cpp">
+      <Filter>+ Vehicle\- Abstact\- brake</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\IMechanicsState.cpp">
+      <Filter>+ Vehicle\- Abstact\- mechanics</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\PhysX\PhysXWheelNode.cpp">
+      <Filter>+ Vehicle\- PhysX\- wheelNode</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\IMotor.cpp">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- motor</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\Motor.cpp">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- motor</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\AutoGearbox.cpp">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- gearbox</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\AutoGearboxModeMap.cpp">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- gearbox</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\Gearbox.cpp">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- gearbox</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\IGearboxCallback.cpp">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- gearbox</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\IGearboxControl.cpp">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- gearbox</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\IGearboxState.cpp">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- gearbox</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\MechGearbox.cpp">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- gearbox</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\Flywheel.cpp">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- flywheel</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\Differential.cpp">
+      <Filter>+ Vehicle\- Abstact\- mechanics\- differential</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\IPedal.cpp">
+      <Filter>+ Vehicle\- Abstact\- pedal</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\PedalFilter.cpp">
+      <Filter>+ Vehicle\- Abstact\- pedal</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\RadPSController.cpp">
+      <Filter>+ Vehicle\- Abstact\- radPSController</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\ISpeedometer.cpp">
+      <Filter>+ Vehicle\- Abstact\- speedometer</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\Speedometer.cpp">
+      <Filter>+ Vehicle\- Abstact\- speedometer</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\SteerControl.cpp">
+      <Filter>+ Vehicle\- Abstact\- steer</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\ThrottleControl.cpp">
+      <Filter>+ Vehicle\- Abstact\- throttle</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\VehicleTypes.cpp">
+      <Filter>+ Vehicle\- Abstact</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\NxuPhysXCollection.cpp">
+      <Filter>+ System\- collection</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Interface\InterfaceImpl.cpp">
+      <Filter>- Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Interface\InputInterface.cpp">
+      <Filter>- Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\DefaultSceneCollection.cpp">
+      <Filter>+ System\- collection</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\SystemInterfaceImpl.cpp">
+      <Filter>+ System\- interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\DefaultVehicleCollection.cpp">
+      <Filter>+ System\- collection</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Interface\UnitConverter.cpp">
+      <Filter>- Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\DistanceUnitInterface.cpp">
+      <Filter>+ System\- interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\DefaultNxuCollection.cpp">
+      <Filter>+ System\- collection</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\PhysX\PhysXVehicle.cpp">
+      <Filter>+ Vehicle\- PhysX</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\External\Code\OgreModified\O_String.cpp">
+      <Filter>- External\- Code\- OgreModified</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\PhysXCooker.cpp">
+      <Filter>+ System\- interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\Factory.cpp">
+      <Filter>+ System\- factory</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Interface\OgreProcedural.cpp">
+      <Filter>- Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\GameObjects\SdkCameraMan.cpp">
+      <Filter>- GameObjects</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\dsLoader.cpp">
+      <Filter>+ System\- dotScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\dsSceneTypes.cpp">
+      <Filter>+ System\- dotScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\dsVehicleTypes.cpp">
+      <Filter>+ System\- dotScene</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\DemoPrecompiledHeaders.cpp" />
+    <ClCompile Include="Source\Nxu\NXU_Asc2Bin.cpp">
+      <Filter>Nxu</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Nxu\NXU_cooking.cpp">
+      <Filter>Nxu</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Nxu\NXU_customcopy.cpp">
+      <Filter>Nxu</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Nxu\NXU_File.cpp">
+      <Filter>Nxu</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Nxu\NXU_Geometry.cpp">
+      <Filter>Nxu</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Nxu\NXU_GraphicsMesh.cpp">
+      <Filter>Nxu</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Nxu\NXU_helper.cpp">
+      <Filter>Nxu</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Nxu\NXU_hull.cpp">
+      <Filter>Nxu</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Nxu\NXU_PhysicsExport.cpp">
+      <Filter>Nxu</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Nxu\NXU_PhysicsInstantiator.cpp">
+      <Filter>Nxu</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Nxu\NXU_ScaledCopy.cpp">
+      <Filter>Nxu</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Nxu\NXU_schema.cpp">
+      <Filter>Nxu</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Nxu\NXU_SchemaStream.cpp">
+      <Filter>Nxu</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Nxu\NXU_Streaming.cpp">
+      <Filter>Nxu</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Nxu\NXU_string.cpp">
+      <Filter>Nxu</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\TinyXml\tinyxml.cpp">
+      <Filter>TinyXml</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\TinyXml\tinyxmlerror.cpp">
+      <Filter>TinyXml</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\TinyXml\tinyxmlparser.cpp">
+      <Filter>TinyXml</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\DeferredShadingSystem.cpp">
+      <Filter>+ System\- render</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\FactoryCollectionService.cpp">
+      <Filter>+ System\- controllers</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\Interface\DebugDrawer.cpp">
+      <Filter>- Interface</Filter>
+    </ClCompile>
+    <ClCompile Include="Source\System\dsAssetTypes.cpp">
+      <Filter>+ System\- dotScene</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Source\External\Script\physx.xml">
+      <Filter>- External\- Script</Filter>
+    </None>
+    <None Include="Source\External\Script\physx_meshes.xml">
+      <Filter>- External\- Script</Filter>
+    </None>
+    <None Include="Source\External\Script\profile.xml">
+      <Filter>- External\- Script</Filter>
+    </None>
+    <None Include="Source\External\Script\scene_res.xml">
+      <Filter>- External\- Script</Filter>
+    </None>
+    <None Include="Source\External\Script\Shader.cg">
+      <Filter>- External\- Script</Filter>
+    </None>
+    <None Include="Source\External\Script\SimpleGuiController.overlay">
+      <Filter>- External\- Script</Filter>
+    </None>
+    <None Include="Source\External\Script\VAZ_2106.material">
+      <Filter>- External\- Script</Filter>
+    </None>
+    <None Include="Source\External\VehicleFormulas.txt">
+      <Filter>- External</Filter>
+    </None>
+    <None Include="Source\External\TODO_OgreChanges.cpp">
+      <Filter>- External</Filter>
+    </None>
+    <None Include="Source\External\BitFieldOps.cpp">
+      <Filter>- External</Filter>
+    </None>
+    <None Include="Source\System\dotScene Definition.xml">
+      <Filter>+ System\- dotScene</Filter>
+    </None>
+  </ItemGroup>
+</Project>

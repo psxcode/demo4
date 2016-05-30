@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+  <physx defMatName="default" defSceneName="default" torqueMult="1.0" NxuFile="physx_meshes.xml">
+
+    <sdk>
+      <remoteDebugger connect="yes" hostName="localhost" port="5425"/>
+    </sdk>
+
+    <scenes>
+      <scene name="default" gravity="980" groundPlane="yes"/>
+    </scenes>
+
+    <materials>
+      <material name="default" statFric="20" dynFric="1" restitution="0"/>
+      <material name="metal" statFric="0.01" dynFric="0.01" restitution="0"/>
+    </materials>
+
+  </physx>
+</root>

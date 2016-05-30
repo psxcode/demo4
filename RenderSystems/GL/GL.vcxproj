@@ -1,0 +1,302 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{DDA4E65B-D9BB-4486-A333-2442E80029C0}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>GL</RootNamespace>
+    <ProjectName>RenderSystem_GL</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>obj\$(Configuration)\</IntDir>
+    <IncludePath>$(BOOST_HOME);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;OGRE_GLPLUGIN_EXPORTS;BOOST_ALL_NO_LIB;_USRDLL;RenderSystem_GL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include;include\GLX;$(SolutionDir)OgreMain\include;src\atifs\include;src\GLSL\include;src\win32;src\nvparse;src\nvparse\winheaders;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <ImportLibrary>$(SolutionDir)lib\$(Configuration)\$(ProjectName).lib</ImportLibrary>
+      <AdditionalDependencies>OgreMain.lib;glu32.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\$(Configuration);</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\GLX\OgreGLXContext.h" />
+    <ClInclude Include="include\GLX\OgreGLXGLSupport.h" />
+    <ClInclude Include="include\GLX\OgreGLXRenderTexture.h" />
+    <ClInclude Include="include\GLX\OgreGLXUtils.h" />
+    <ClInclude Include="include\GLX\OgreGLXWindow.h" />
+    <ClInclude Include="include\GL\gl.h" />
+    <ClInclude Include="include\GL\glew.h" />
+    <ClInclude Include="include\GL\glext.h" />
+    <ClInclude Include="include\GL\glxew.h" />
+    <ClInclude Include="include\GL\glxext.h" />
+    <ClInclude Include="include\GL\glxtokens.h" />
+    <ClInclude Include="include\GL\wglew.h" />
+    <ClInclude Include="include\GL\wglext.h" />
+    <ClInclude Include="include\gtk\OgreGTKGLSupport.h" />
+    <ClInclude Include="include\gtk\OgreGTKWindow.h" />
+    <ClInclude Include="include\OgreGLATIFSInit.h" />
+    <ClInclude Include="include\OgreGLContext.h" />
+    <ClInclude Include="include\OgreGLDefaultHardwareBufferManager.h" />
+    <ClInclude Include="include\OgreGLFBOMultiRenderTarget.h" />
+    <ClInclude Include="include\OgreGLFBORenderTexture.h" />
+    <ClInclude Include="include\OgreGLFrameBufferObject.h" />
+    <ClInclude Include="include\OgreGLGpuNvparseProgram.h" />
+    <ClInclude Include="include\OgreGLGpuProgram.h" />
+    <ClInclude Include="include\OgreGLGpuProgramManager.h" />
+    <ClInclude Include="include\OgreGLHardwareBufferManager.h" />
+    <ClInclude Include="include\OgreGLHardwareIndexBuffer.h" />
+    <ClInclude Include="include\OgreGLHardwareOcclusionQuery.h" />
+    <ClInclude Include="include\OgreGLHardwarePixelBuffer.h" />
+    <ClInclude Include="include\OgreGLHardwareVertexBuffer.h" />
+    <ClInclude Include="include\OgreGLPBRenderTexture.h" />
+    <ClInclude Include="include\OgreGLPBuffer.h" />
+    <ClInclude Include="include\OgreGLPixelFormat.h" />
+    <ClInclude Include="include\OgreGLPlugin.h" />
+    <ClInclude Include="include\OgreGLPrerequisites.h" />
+    <ClInclude Include="include\OgreGLRenderSystem.h" />
+    <ClInclude Include="include\OgreGLRenderTexture.h" />
+    <ClInclude Include="include\OgreGLRenderToVertexBuffer.h" />
+    <ClInclude Include="include\OgreGLSupport.h" />
+    <ClInclude Include="include\OgreGLTexture.h" />
+    <ClInclude Include="include\OgreGLTextureManager.h" />
+    <ClInclude Include="include\OgreSDLGLSupport.h" />
+    <ClInclude Include="include\OgreSDLPrerequisites.h" />
+    <ClInclude Include="include\OgreSDLWindow.h" />
+    <ClInclude Include="include\OgreWin32Context.h" />
+    <ClInclude Include="include\OgreWin32GLSupport.h" />
+    <ClInclude Include="include\OgreWin32Prerequisites.h" />
+    <ClInclude Include="include\OgreWin32RenderTexture.h" />
+    <ClInclude Include="include\OgreWin32Window.h" />
+    <ClInclude Include="include\OSX\OgreOSXCarbonContext.h" />
+    <ClInclude Include="include\OSX\OgreOSXCarbonWindow.h" />
+    <ClInclude Include="include\OSX\OgreOSXCGLContext.h" />
+    <ClInclude Include="include\OSX\OgreOSXCocoaContext.h" />
+    <ClInclude Include="include\OSX\OgreOSXCocoaWindow.h" />
+    <ClInclude Include="include\OSX\OgreOSXContext.h" />
+    <ClInclude Include="include\OSX\OgreOSXGLSupport.h" />
+    <ClInclude Include="include\OSX\OgreOSXRenderTexture.h" />
+    <ClInclude Include="include\OSX\OgreOSXWindow.h" />
+    <ClInclude Include="src\atifs\include\ATI_FS_GLGpuProgram.h" />
+    <ClInclude Include="src\atifs\include\Compiler2Pass.h" />
+    <ClInclude Include="src\atifs\include\ps_1_4.h" />
+    <ClInclude Include="src\GLSL\include\OgreGLSLExtSupport.h" />
+    <ClInclude Include="src\GLSL\include\OgreGLSLGpuProgram.h" />
+    <ClInclude Include="src\GLSL\include\OgreGLSLLinkProgram.h" />
+    <ClInclude Include="src\GLSL\include\OgreGLSLLinkProgramManager.h" />
+    <ClInclude Include="src\GLSL\include\OgreGLSLPreprocessor.h" />
+    <ClInclude Include="src\GLSL\include\OgreGLSLProgram.h" />
+    <ClInclude Include="src\GLSL\include\OgreGLSLProgramFactory.h" />
+    <ClInclude Include="src\GLX\OgreGLUtil.h" />
+    <ClInclude Include="src\gtk\OgreGLUtil.h" />
+    <ClInclude Include="src\nvparse\macro.h" />
+    <ClInclude Include="src\nvparse\nvparse.h" />
+    <ClInclude Include="src\nvparse\nvparse_errors.h" />
+    <ClInclude Include="src\nvparse\nvparse_externs.h" />
+    <ClInclude Include="src\nvparse\ps1.0_program.h" />
+    <ClInclude Include="src\nvparse\rc1.0_combiners.h" />
+    <ClInclude Include="src\nvparse\rc1.0_final.h" />
+    <ClInclude Include="src\nvparse\rc1.0_general.h" />
+    <ClInclude Include="src\nvparse\rc1.0_register.h" />
+    <ClInclude Include="src\nvparse\ts1.0_inst.h" />
+    <ClInclude Include="src\nvparse\ts1.0_inst_list.h" />
+    <ClInclude Include="src\nvparse\vs1.0_inst.h" />
+    <ClInclude Include="src\nvparse\vs1.0_inst_list.h" />
+    <ClInclude Include="src\nvparse\winheaders\unistd.h" />
+    <ClInclude Include="src\nvparse\_ps1.0_parser.h" />
+    <ClInclude Include="src\nvparse\_rc1.0_parser.h" />
+    <ClInclude Include="src\nvparse\_ts1.0_parser.h" />
+    <ClInclude Include="src\nvparse\_vs1.0_parser.h" />
+    <ClInclude Include="src\OSX\OgreGLUtil.h" />
+    <ClInclude Include="src\SDL\OgreGLUtil.h" />
+    <ClInclude Include="src\win32\OgreGLUtil.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\atifs\src\ATI_FS_GLGpuProgram.cpp" />
+    <ClCompile Include="src\atifs\src\Compiler2Pass.cpp" />
+    <ClCompile Include="src\atifs\src\ps_1_4.cpp" />
+    <ClCompile Include="src\glew.cpp" />
+    <ClCompile Include="src\GLSL\src\OgreGLSLExtSupport.cpp" />
+    <ClCompile Include="src\GLSL\src\OgreGLSLGpuProgram.cpp" />
+    <ClCompile Include="src\GLSL\src\OgreGLSLLinkProgram.cpp" />
+    <ClCompile Include="src\GLSL\src\OgreGLSLLinkProgramManager.cpp" />
+    <ClCompile Include="src\GLSL\src\OgreGLSLPreprocessor.cpp" />
+    <ClCompile Include="src\GLSL\src\OgreGLSLProgram.cpp" />
+    <ClCompile Include="src\GLSL\src\OgreGLSLProgramFactory.cpp" />
+    <ClCompile Include="src\GLX\OgreGLXContext.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\GLX\OgreGLXGLSupport.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\GLX\OgreGLXRenderTexture.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\GLX\OgreGLXWindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\gtk\OgreGTKGLSupport.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\gtk\OgreGTKWindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\nvparse\avp1.0_impl.cpp" />
+    <ClCompile Include="src\nvparse\nvparse.cpp" />
+    <ClCompile Include="src\nvparse\nvparse_errors.cpp" />
+    <ClCompile Include="src\nvparse\ps1.0_program.cpp" />
+    <ClCompile Include="src\nvparse\ps1.0__test_main.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\nvparse\rc1.0_combiners.cpp" />
+    <ClCompile Include="src\nvparse\rc1.0_final.cpp" />
+    <ClCompile Include="src\nvparse\rc1.0_general.cpp" />
+    <ClCompile Include="src\nvparse\ts1.0_inst.cpp" />
+    <ClCompile Include="src\nvparse\ts1.0_inst_list.cpp" />
+    <ClCompile Include="src\nvparse\vcp1.0_impl.cpp" />
+    <ClCompile Include="src\nvparse\vp1.0_impl.cpp" />
+    <ClCompile Include="src\nvparse\vs1.0_inst.cpp" />
+    <ClCompile Include="src\nvparse\vs1.0_inst_list.cpp" />
+    <ClCompile Include="src\nvparse\vsp1.0_impl.cpp" />
+    <ClCompile Include="src\nvparse\_ps1.0_lexer.cpp" />
+    <ClCompile Include="src\nvparse\_ps1.0_parser.cpp" />
+    <ClCompile Include="src\nvparse\_rc1.0_lexer.cpp" />
+    <ClCompile Include="src\nvparse\_rc1.0_parser.cpp" />
+    <ClCompile Include="src\nvparse\_ts1.0_lexer.cpp" />
+    <ClCompile Include="src\nvparse\_ts1.0_parser.cpp" />
+    <ClCompile Include="src\nvparse\_vs1.0_lexer.cpp" />
+    <ClCompile Include="src\nvparse\_vs1.0_parser.cpp" />
+    <ClCompile Include="src\OgreGLATIFSInit.cpp" />
+    <ClCompile Include="src\OgreGLContext.cpp" />
+    <ClCompile Include="src\OgreGLDefaultHardwareBufferManager.cpp" />
+    <ClCompile Include="src\OgreGLEngineDll.cpp" />
+    <ClCompile Include="src\OgreGLFBOMultiRenderTarget.cpp" />
+    <ClCompile Include="src\OgreGLFBORenderTexture.cpp" />
+    <ClCompile Include="src\OgreGLFrameBufferObject.cpp" />
+    <ClCompile Include="src\OgreGLGpuNvparseProgram.cpp" />
+    <ClCompile Include="src\OgreGLGpuProgram.cpp" />
+    <ClCompile Include="src\OgreGLGpuProgramManager.cpp" />
+    <ClCompile Include="src\OgreGLHardwareBufferManager.cpp" />
+    <ClCompile Include="src\OgreGLHardwareIndexBuffer.cpp" />
+    <ClCompile Include="src\OgreGLHardwareOcclusionQuery.cpp" />
+    <ClCompile Include="src\OgreGLHardwarePixelBuffer.cpp" />
+    <ClCompile Include="src\OgreGLHardwareVertexBuffer.cpp" />
+    <ClCompile Include="src\OgreGLPBRenderTexture.cpp" />
+    <ClCompile Include="src\OgreGLPixelFormat.cpp" />
+    <ClCompile Include="src\OgreGLPlugin.cpp" />
+    <ClCompile Include="src\OgreGLRenderSystem.cpp" />
+    <ClCompile Include="src\OgreGLRenderTexture.cpp" />
+    <ClCompile Include="src\OgreGLRenderToVertexBuffer.cpp" />
+    <ClCompile Include="src\OgreGLSupport.cpp" />
+    <ClCompile Include="src\OgreGLTexture.cpp" />
+    <ClCompile Include="src\OgreGLTextureManager.cpp" />
+    <ClCompile Include="src\OgreWin32GLSupport.cpp" />
+    <ClCompile Include="src\OgreWin32RenderTexture.cpp" />
+    <ClCompile Include="src\OgreWin32Window.cpp" />
+    <ClCompile Include="src\OSX\OgreOSXCarbonContext.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\OSX\OgreOSXCarbonWindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\OSX\OgreOSXCGLContext.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\OSX\OgreOSXContext.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\OSX\OgreOSXRenderTexture.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\OSX\OgreOSXWindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\SDL\OgreSDLGLSupport.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\SDL\OgreSDLWindow.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="src\win32\OgreWin32Context.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\nvparse\Makefile.reyacc" />
+    <None Include="src\nvparse\ps1.0_grammar.y" />
+    <None Include="src\nvparse\ps1.0_tokens.l" />
+    <None Include="src\nvparse\rc1.0_grammar.y" />
+    <None Include="src\nvparse\rc1.0_tokens.l" />
+    <None Include="src\nvparse\ts1.0_grammar.y" />
+    <None Include="src\nvparse\ts1.0_tokens.l" />
+    <None Include="src\nvparse\vs1.0_grammar.y" />
+    <None Include="src\nvparse\vs1.0_tokens.l" />
+    <None Include="src\OSX\OgreOSXCocoaContext.mm" />
+    <None Include="src\OSX\OgreOSXCocoaWindow.mm" />
+    <None Include="src\OSX\OgreOSXGLSupport.mm" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

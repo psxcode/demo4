@@ -1,0 +1,974 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="DebugExe|Win32">
+      <Configuration>DebugExe</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseDLib|Win32">
+      <Configuration>ReleaseDLib</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseExe|Win32">
+      <Configuration>ReleaseExe</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="ReleaseSLib|Win32">
+      <Configuration>ReleaseSLib</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{078E9E99-EDF7-4A5B-824D-090EE09413E7}</ProjectGuid>
+    <RootNamespace>Demo_4</RootNamespace>
+    <SccProjectName>
+    </SccProjectName>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccProvider>
+    </SccProvider>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='DebugExe|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='DebugExe|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='DebugExe|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='DebugExe|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='DebugExe|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">false</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">$(SolutionDir)Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">obj\$(Configuration)\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='DebugExe|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='DebugExe|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='DebugExe|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'" />
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">$(OGRE_HOME)boost_1_42;$(OGRE_BUILD_DIR)include;$(OGRE_SRC_DIR)OgreMain\include;$(IncludePath)</IncludePath>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">Demo</TargetName>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)Debug\</OutDir>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Demo_d</TargetName>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">$(OGRE_BUILD_DIR)include;$(OGRE_HOME)boost_1_42;$(OGRE_SRC_DIR)OgreMain\include;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">$(BOOST_HOME);$(PHYSX_HOME)Include\foundation\;$(PHYSX_HOME)Include\cooking\;$(IncludePath)</IncludePath>
+    <IncludePath Condition="'$(Configuration)|$(Platform)'=='DebugExe|Win32'">$(OGRE_SRC_DIR)OgreMain\include;$(OGRE_BUILD_DIR)include;$(OGRE_HOME)boost_1_42;$(IncludePath)</IncludePath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">$(SolutionDir)lib\Release\;$(PHYSX_HOME)lib\Win32\;$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">$(OGRE_BUILD_DIR)bin/ReleaseStatic/;$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">$(LibraryPath)</LibraryPath>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">Demo</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugExe|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>.\Source\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>.\Source\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;DEMO_NONCLIENT_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>OgreMainStatic.lib;OIS.lib;PhysXLoader.lib;PhysXCooking.lib;NxCharacter.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(SolutionDir)ReleaseSLib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <FavorSizeOrSpeed>Neither</FavorSizeOrSpeed>
+      <AdditionalIncludeDirectories>.\Source\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USE_MATH_DEFINES;_CRT_SECURE_NO_WARNINGS;DEMO_STATIC_BUILD;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <EnableEnhancedInstructionSet>NotSet</EnableEnhancedInstructionSet>
+      <AdditionalOptions>
+      </AdditionalOptions>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <AdditionalDependencies>OgreMainStatic.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>$(OutDir);$(OGRE_BUILD_DIR)bin/ReleaseStatic/;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>$(SolutionDir)ogredeps\include;$(SolutionDir)OgreMain\include;.\Source;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_CRT_SECURE_NO_WARNINGS;DEMO_EXE_BUILD;BOOST_ALL_NO_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <CompileAs>CompileAsCpp</CompileAs>
+      <PrecompiledHeaderFile>DemoStableHeaders.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>OgreMain.lib;OIS.lib;PhysXCooking.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USE_MATH_DEFINES;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <AdditionalDependencies>OgreMain_d.lib;OIS_d.lib;PhysXLoader.lib;PhysXCooking.lib;NxCharacter.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuildStep Include="Source\Core\CompareObjPtrFindList.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <ClInclude Include="Source\Core\FastDelegate.h" />
+    <ClInclude Include="Source\Core\Tagged.h" />
+    <ClInclude Include="Source\delegate_traits.h" />
+    <ClInclude Include="Source\DemoBuildSettings.h" />
+    <ClInclude Include="Source\Core\bitop.h" />
+    <ClInclude Include="Source\Core\event_enums.h" />
+    <CustomBuildStep Include="Source\Core\FindList.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <ClInclude Include="Source\Core\RangeVar.h" />
+    <ClInclude Include="Source\Core\StringPath.h" />
+    <ClInclude Include="Source\Core\ValueByValue.h" />
+    <ClInclude Include="Source\Core\ValueFilter.h" />
+    <ClInclude Include="Source\Core\Controller.h" />
+    <ClInclude Include="Source\Core\DelTimer.h" />
+    <ClInclude Include="Source\Core\Callback.h" />
+    <ClInclude Include="Source\Core\Event.h" />
+    <ClInclude Include="Source\DemoPrerequisites.h" />
+    <ClInclude Include="Source\DemoStableHeaders.h" />
+    <ClInclude Include="Source\External\Code\OgreModified\O_String.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\External\Code\TagCounter.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\input_traits.h" />
+    <ClInclude Include="Source\Interface\DebugDrawer.h" />
+    <ClInclude Include="Source\Interface\FactoryInterface.h" />
+    <ClInclude Include="Source\Interface\OgrePhysXConverter.h" />
+    <ClInclude Include="Source\Interface\OgreProcedural.h" />
+    <ClInclude Include="Source\Interface\UnitConverter.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Interface\InputInterface.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Nxu\NXU_Asc2Bin.h" />
+    <ClInclude Include="Source\Nxu\NXU_cooking.h" />
+    <ClInclude Include="Source\Nxu\NXU_customcopy.h" />
+    <ClInclude Include="Source\Nxu\NXU_File.h" />
+    <ClInclude Include="Source\Nxu\NXU_Geometry.h" />
+    <ClInclude Include="Source\Nxu\NXU_GraphicsMesh.h" />
+    <ClInclude Include="Source\Nxu\NXU_helper.h" />
+    <ClInclude Include="Source\Nxu\NXU_hull.h" />
+    <ClInclude Include="Source\Nxu\NXU_OgreDataStream.h" />
+    <ClInclude Include="Source\Nxu\NXU_PhysicsExport.h" />
+    <ClInclude Include="Source\Nxu\NXU_PhysicsInstantiator.h" />
+    <ClInclude Include="Source\Nxu\NXU_ScaledCopy.h" />
+    <ClInclude Include="Source\Nxu\NXU_schema.h" />
+    <ClInclude Include="Source\Nxu\NXU_SchemaStream.h" />
+    <ClInclude Include="Source\Nxu\NXU_SchemaTypes.h" />
+    <ClInclude Include="Source\Nxu\NXU_Streaming.h" />
+    <ClInclude Include="Source\Nxu\NXU_string.h" />
+    <ClInclude Include="Source\System\DeferredShadingSystem.h" />
+    <ClInclude Include="Source\System\dsAssetTypes.h" />
+    <ClInclude Include="Source\System\dsLoader.h" />
+    <ClInclude Include="Source\System\dsSceneTypes.h" />
+    <ClInclude Include="Source\System\dsSceneTypesLoader.h" />
+    <ClInclude Include="Source\System\dsVehicleTypes.h" />
+    <ClInclude Include="Source\System\dsVehicleTypesLoader.h" />
+    <ClInclude Include="Source\System\FactoryCollectionService.h" />
+    <ClInclude Include="Source\System\DefaultNxuCollection.h" />
+    <ClInclude Include="Source\System\DefaultSceneCollection.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\System\DefaultVehicleCollection.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\System\DistanceUnitInterface.h" />
+    <ClInclude Include="Source\System\Factory.h" />
+    <ClInclude Include="Source\System\NxuCollectionInterface.h" />
+    <ClInclude Include="Source\System\NxuPhysXCollection.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\System\OgreInterface.h" />
+    <ClInclude Include="Source\System\PhysXCooker.h" />
+    <ClInclude Include="Source\System\PhysXInterface.h" />
+    <ClInclude Include="Source\System\SceneCollectionInterface.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\System\collection_traits.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\System\PhysXParamsCollection.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\System\SceneParamsCollection.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\System\VehicleCollectionInterface.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\System\VehicleParamsCollection.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <CustomBuildStep Include="Source\System\NXU_Asc2Bin.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Source\System\NXU_File.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Source\System\NXU_SchemaStream.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Source\System\NXU_SchemaTypes.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Source\System\NXU_Streaming.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Source\System\NXU_string.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Source\System\NxuPhysXCollection.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <ClInclude Include="Source\System\SystemInterface.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\System\InputController.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\System\MainController.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\System\OgreController.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\System\DeferredMaterialGenerator.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\System\DLight.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\System\DLightCP.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\System\GBufferSchemeHandler.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\System\LightShapeGeom.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\System\MaterialGenerator.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\System\MaterialGeneratorManager.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\System\NullSchemeHandler.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <CustomBuildStep Include="Source\External\Code\OgreIteratorWrapper.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <CustomBuildStep Include="Source\External\Code\OgreSharedPtr.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <ClInclude Include="Source\External\Code\PhysX\Stream.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\TinyXml\tinyxml.h" />
+    <ClInclude Include="Source\type_traits.h" />
+    <ClInclude Include="Source\Vehicle\Abstract\BaseVehicle.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\DriverTiming.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Driver\AutoGearboxController.h" />
+    <ClInclude Include="Source\Vehicle\Driver\drive_options.h" />
+    <ClInclude Include="Source\Vehicle\Driver\GearboxController.h" />
+    <ClInclude Include="Source\Vehicle\Driver\IGearboxController.h" />
+    <ClInclude Include="Source\Vehicle\Driver\IGearboxControllerState.h" />
+    <ClInclude Include="Source\Vehicle\Driver\MechGearboxController.h" />
+    <ClInclude Include="Source\Vehicle\Driver\VehicleDriver.h" />
+    <ClInclude Include="Source\Vehicle\Abstract\DriveStyleCalculator.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\MotorChart.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\PhysX\PhysXTypes.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\PhysX\PhysXVehicle.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\PhysX\PhysXVehicleAxle.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\PhysX\PhysXVehicleBodyParams.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\PhysX\PhysXVehicleSetParams.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\PhysX\PhysXWheelNode.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\PhysX\PhysXWheelNodeParams.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\SpeedToGearCalculator.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\VehicleToDriverData.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\VehicleTypes.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\IPedal.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\IPedalCallback.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\IPedalControl.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\IPedalState.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\pedal_enums.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\PedalFilter.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\IMechanicsState.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\Mechanics.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\mechanics_enums.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\MechanicsParams.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\IMotor.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\IMotorCallback.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\IMotorControl.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\IMotorState.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\Motor.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\MotorParams.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\Differential.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\DifferentialParams.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\AutoGearbox.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\AutoGearboxModeMap.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\Gearbox.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\GearboxParams.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\IGearbox.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\IGearboxCallback.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\IGearboxControl.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\IGearboxState.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\MechGearbox.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\Flywheel.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\FlywheelParams.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\WheelNode.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\BrakeBlock.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\BrakeControl.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\VehicleAxle.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\SteerControl.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\ThrottleControl.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\ThrottleControlParams.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\RadPSController.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\RadPSControllerTypes.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\RadPSTiming.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\ISpeedometerState.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\Speedometer.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Vehicle\Abstract\SpeedometerParams.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\GameObjects\DemoSceneController.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\GameObjects\DRTest01.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\GameObjects\SimpleGuiController.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\GameObjects\BaseCameraController.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\GameObjects\OrbitCameraController.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\GameObjects\SdkCameraMan.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\Archive\DemoArchive.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <CustomBuildStep Include="Source\AI\PathLine.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <ClInclude Include="Source\External\Code\OgreCEGUI\OgreCEGUIRenderer.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\External\Code\OgreCEGUI\OgreCEGUIResourceProvider.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\External\Code\OgreCEGUI\OgreCEGUITexture.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\External\Code\OgreModified\O_IteratorWrapper.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\External\Code\OgreModified\O_SharedPtr.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClInclude>
+    <ClInclude Include="Source\shared_ptr_traits.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Source\Core\StringPath.cpp" />
+    <ClCompile Include="Source\Core\Controller.cpp" />
+    <ClCompile Include="Source\DemoPrecompiledHeaders.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeaderFile Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">DemoStableHeaders.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <ClCompile Include="Source\External\Code\OgreModified\O_String.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Interface\DebugDrawer.cpp" />
+    <ClCompile Include="Source\Interface\InputInterface.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Interface\InterfaceImpl.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Interface\OgreProcedural.cpp" />
+    <ClCompile Include="Source\Interface\UnitConverter.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\Nxu\NXU_Asc2Bin.cpp" />
+    <ClCompile Include="Source\Nxu\NXU_cooking.cpp" />
+    <ClCompile Include="Source\Nxu\NXU_customcopy.cpp" />
+    <ClCompile Include="Source\Nxu\NXU_File.cpp" />
+    <ClCompile Include="Source\Nxu\NXU_Geometry.cpp" />
+    <ClCompile Include="Source\Nxu\NXU_GraphicsMesh.cpp" />
+    <ClCompile Include="Source\Nxu\NXU_helper.cpp" />
+    <ClCompile Include="Source\Nxu\NXU_hull.cpp" />
+    <ClCompile Include="Source\Nxu\NXU_PhysicsExport.cpp" />
+    <ClCompile Include="Source\Nxu\NXU_PhysicsInstantiator.cpp" />
+    <ClCompile Include="Source\Nxu\NXU_ScaledCopy.cpp" />
+    <ClCompile Include="Source\Nxu\NXU_schema.cpp" />
+    <ClCompile Include="Source\Nxu\NXU_SchemaStream.cpp" />
+    <ClCompile Include="Source\Nxu\NXU_Streaming.cpp" />
+    <ClCompile Include="Source\Nxu\NXU_string.cpp" />
+    <ClCompile Include="Source\System\DeferredShadingSystem.cpp" />
+    <ClCompile Include="Source\System\dsAssetTypes.cpp" />
+    <ClCompile Include="Source\System\dsLoader.cpp" />
+    <ClCompile Include="Source\System\dsSceneTypes.cpp" />
+    <ClCompile Include="Source\System\dsVehicleTypes.cpp" />
+    <ClCompile Include="Source\System\FactoryCollectionService.cpp" />
+    <ClCompile Include="Source\System\DefaultNxuCollection.cpp" />
+    <ClCompile Include="Source\System\DefaultVehicleCollection.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\System\DistanceUnitInterface.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Source\System\Factory.cpp" />
+    <ClCompile Include="Source\System\NxuPhysXCollection.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\System\DefaultSceneCollection.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\System\PhysXCooker.cpp" />
+    <ClCompile Include="Source\System\PhysXParamsCollection.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\System\SceneParamsCollection.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\System\SystemInterfaceImpl.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\System\VehicleParamsCollection.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\System\SystemInterface.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\System\InputController.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\System\MainController.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\System\OgreController.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\System\PhysXController.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\System\DeferredMaterialGenerator.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\System\DLight.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\System\DLightCP.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\System\GBufferSchemeHandler.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\System\LightShapeGeom.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\System\MaterialGenerator.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\System\MaterialGeneratorManager.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\External\Code\PhysX\Stream.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\TinyXml\tinyxml.cpp" />
+    <ClCompile Include="Source\TinyXml\tinyxmlerror.cpp" />
+    <ClCompile Include="Source\TinyXml\tinyxmlparser.cpp" />
+    <ClCompile Include="Source\Vehicle\Driver\AutoGearboxController.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Driver\GearboxController.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Driver\IGearboxControllerState.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Driver\MechGearboxController.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Driver\VehicleDriver.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\PhysX\PhysXVehicle.cpp" />
+    <ClCompile Include="Source\Vehicle\PhysX\PhysXWheelNode.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\VehicleTypes.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\IPedal.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\PedalFilter.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\IMechanicsState.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\IMotor.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\Motor.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\Differential.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\AutoGearbox.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\AutoGearboxModeMap.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\Gearbox.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\IGearboxCallback.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\IGearboxControl.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\IGearboxState.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\MechGearbox.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\Flywheel.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\BrakeBlock.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\BrakeControl.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\SteerControl.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\ThrottleControl.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\RadPSController.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\ISpeedometer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Vehicle\Abstract\Speedometer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\GameObjects\DemoSceneController.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\GameObjects\DRTest01.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\GameObjects\SimpleGuiController.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\GameObjects\OrbitCameraController.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\GameObjects\SdkCameraMan.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\Archive\DemoArchive.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="Source\main.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">Use</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuildStep Include="Source\System\ProfileExample.xml">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </CustomBuildStep>
+    <None Include="Source\External\BitFieldOps.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='DebugExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="Source\External\VehicleFormulas.txt">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="Source\External\Script\physx.xml" />
+    <None Include="Source\External\Script\physx_meshes.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Source\External\Script\profile.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Source\External\Script\scene_res.xml">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Source\External\Script\Shader.cg" />
+    <None Include="Source\External\Script\SimpleGuiController.overlay" />
+    <None Include="Source\External\Script\VAZ_2106.material" />
+    <None Include="Source\External\TODO_OgreChanges.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseDLib|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseExe|Win32'">true</ExcludedFromBuild>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='ReleaseSLib|Win32'">true</ExcludedFromBuild>
+    </None>
+    <None Include="Source\System\dotScene Definition.xml" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

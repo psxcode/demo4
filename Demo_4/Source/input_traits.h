@@ -1,0 +1,56 @@
+#pragma once
+
+namespace Demo
+{
+//------------------------------------------------------------
+class input_traits
+{
+public:
+	//--------------------------------//
+	enum INPUT_ID
+	{
+		IID_NOT_DEFINED,
+
+		IID_MOUSE_MOVED,
+		IID_MOUSE_LBUTTON,
+		IID_MOUSE_RBUTTON,
+		IID_MOUSE_MBUTTON,
+
+		IID_ESCAPE_KEY,
+		IID_MOVE_FORWARD,
+		IID_MOVE_BACK,
+		IID_MOVE_LEFT,
+		IID_MOVE_RIGHT,
+		IID_SWITCH_DEBUG_RENDER,
+		IID_SWITCH_CAMERA_MODE,
+
+
+		IID_VEHICLE_DRIVER_THROTTLE_AXIS,
+		IID_VEHICLE_DRIVER_THROTTLE_BUTTON,
+
+		IID_VEHICLE_DRIVER_CLUTCH_AXIS,
+		IID_VEHICLE_DRIVER_CLUTCH_BUTTON,
+
+		IID_VEHICLE_DRIVER_BRAKE_AXIS,
+		IID_VEHICLE_DRIVER_BRAKE_BUTTON,
+
+		IID_VEHICLE_DRIVER_HANDBRAKE_BUTTON,
+
+		IID_VEHICLE_DRIVER_STEER_AXIS,
+		IID_VEHICLE_DRIVER_STEER_LEFT_BUTTON,
+		IID_VEHICLE_DRIVER_STEER_RIGHT_BUTTON,
+
+		IID_VEHICLE_DRIVER_SHIFT_UP_BUTTON,
+		IID_VEHICLE_DRIVER_SHIFT_DOWN_BUTTON
+	};
+	//--------------------------------//
+	enum INPUT_STATE
+	{
+		IS_NOT_DEFINED,
+		IS_PRESSED,
+		IS_RELEASED
+	};
+	//--------------------------------//
+};
+//------------------------------------------------------------
+}

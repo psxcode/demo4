@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<root>
+  
+  <ogremax>
+    <vehicles>
+      <nodes>
+
+        <node name="All/RimTire/18d/Demo_Rubber">
+          <position x="0" y="0" z="0" />
+          <scale x="1" y="1" z="1" />
+          <rotation qx="0" qy="0" qz="0" qw="1" />
+          <entity name="All/RimTire/18d/Demo_Rubber" castShadows="true" receiveShadows="true" meshFile="AllRimTire18dDemo_Rubber.mesh">
+            <subentities>
+              <subentity index="0" materialName="ModRim" />
+              <subentity index="1" materialName="Tire" />
+            </subentities>
+          </entity>
+        </node>
+
+        <node name="All/IronWheel/Demo_Front">
+          <position x="0" y="0" z="0" />
+          <scale x="1" y="1" z="1" />
+          <rotation qx="0" qy="0" qz="0" qw="1" />
+          <entity name="All/IronWheel/Demo_Front" castShadows="true" receiveShadows="true" meshFile="AllIronWheelDemo_Front.mesh">
+            <subentities>
+              <subentity index="0" materialName="iron_wheel" />
+            </subentities>
+          </entity>
+        </node>
+
+        <node name="VAZ/All/IronWheel/Demo_Back">
+          <position x="0" y="0" z="0" />
+          <scale x="1" y="1" z="1" />
+          <rotation qx="0" qy="0" qz="0" qw="1" />
+          <entity name="VAZ/All/IronWheel/Demo_Back" castShadows="true" receiveShadows="true" meshFile="VAZAllIronWheelDemo_Back.mesh">
+            <subentities>
+              <subentity index="0" materialName="iron_wheel" />
+            </subentities>
+          </entity>
+        </node>
+
+        <node name="Cars/Demo_VAZ_2106">
+          <position x="0" y="0" z="0" />
+          <scale x="1" y="1" z="1" />
+          <rotation qx="0" qy="0" qz="0" qw="1" />
+          <entity name="Cars/Demo_VAZ_2106" castShadows="true" receiveShadows="true" meshFile="CarsDemo_VAZ_2106.mesh">
+            <subentities>
+              <subentity index="0" materialName="BlackPlastic" />
+              <subentity index="1" materialName="ReflMetal" />
+              <subentity index="2" materialName="CarBody01" />
+              <subentity index="3" materialName="Glass" />
+              <subentity index="4" materialName="Lights" />
+            </subentities>
+          </entity>
+        </node>
+
+        <node name="Plane">
+          <position x="1.54603" y="4.25048e-005" z="972.396" />
+          <scale x="1" y="1" z="1" />
+          <rotation qx="0" qy="0" qz="0" qw="1" />
+          <entity name="Plane" castShadows="true" receiveShadows="true" meshFile="Plane.mesh">
+            <subentities>
+              <subentity index="0" materialName="iron_wheel" />
+            </subentities>
+          </entity>
+        </node>
+
+      </nodes>
+    </vehicles>
+
+    <scene>
+    </scene>
+
+  </ogremax>
+  
+</root>

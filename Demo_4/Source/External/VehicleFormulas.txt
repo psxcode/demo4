@@ -1,0 +1,53 @@
+motorRpm = motorRpm + clutchRatio(mainDriveshaftRpm *gearRatio* - motorRpm) + (1-clutchRatio)*engineTorque*rpmIncValue;
+
+maxTorque = lookup(motorRpm);
+engineBrakeTorque = lookupBrake(motorRpm);
+
+engineTorque = throttlePosition * maxTorque -  (1-throttlePosition)*engineBrakeTorque;
+
+driveTorque = gearRatio * differentialRatio * clutchRatio * engineTorque;
+wheel->setMotorTorque(driveTorque/2);
+
+mainDriveshaftRpm = differentialRatio*(wheel0->getAxleSpeed + wheel1->getAxleSpeed)/2 ;
+
+
+motor
+{
+	rpmIncValue
+	 lookupRpm(motorRpm)
+	 lookupBrake(motorRpm)
+	user shift -> gearRatio 
+	differentialRatio
+}
+
+control system
+{
+	throttle -> throttle control system
+	break -> abs
+	handbrake
+	clutch -> gearbox
+	user shift -> gearbox
+	steering	-> steering controller system
+}
+
+driver
+{
+	throttle
+	break
+	handbrake
+	clutch
+	steering	
+	user shift
+}
+
+
+
+
+MotorRpm = MotorRpm - ratio;
+maxTorque = LookupTorqueCurve( MotorRpm );
+engineTorque = throttlePosition * maxTorque;
+driveTorque = gearRatio * differentialRatio * clutchRatio * engineTorque;
+wheel->setMotorTorque(driveTorque);
+
+wheelsRpm = (wheel0->getAxleSpeed + wheel1->getAxleSpeed)/2 ;
+motorRpm = (motorRpm + wheelsRpm * gearRatio * differentialRatio * clutchRatio)/2;

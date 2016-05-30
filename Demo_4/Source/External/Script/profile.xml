@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+
+  <profile name="common">
+
+    <vehicleTypes>
+
+      <Driver
+        calmTiming="AgrDemoDriver"
+        calmMotorChartMarksPack="Cars/Demo_VAZ_2106/Demo_AgrData">
+        <driveOptions>
+          <option name="throttleAssist" value="off"/>
+          <option name="brakeAssist" value="off"/>
+          <option name="clutchAssist" value="on"/>
+          <option name="steerAssist" value="off"/>
+          <option name="shiftAssist" value="off"/>
+          <option name="reversePrevent" value="off"/>
+          <option name="neutralPrevent" value="off"/>
+          <option name="userControls" value="on"/>
+          <option name="userClutch" value="on"/>
+        </driveOptions>
+      </Driver>
+      
+      <DriverTiming name="CalmDemoDriver"
+        throttlePress="1.0"
+        throttleRelease="0.5"
+        brakePress="1.0"
+        brakeRelease="0.5"
+        clutchPress="0.1"
+        clutchRelease="0.2"
+        handbrakePress="1.0"
+        handbrakeRelease="1.0"
+        steerPress="2.0"
+        steerRelease="1.0"
+        shiftToNeutral="0.5"
+        shiftToDirect="1.0"
+        shiftToReverse="2.0"
+        shiftDelay="1.0"
+        switchMode="2.0"
+        switchSeq="0.5"
+        rpmZoneReaction="0.5"
+        rpmSpeedReaction="0.5"
+        />
+
+      <DriverTiming name="AgrDemoDriver"
+        throttlePress="0.25"
+        throttleRelease="0.1"
+        brakePress="0.2"
+        brakeRelease="0.2"
+        clutchPress="0.2"
+        clutchRelease="1.0"
+        handbrakePress="1.0"
+        handbrakeRelease="1.0"
+        steerPress="0.5"
+        steerRelease="0.25"
+        shiftToNeutral="0.25"
+        shiftToDirect="0.5"
+        shiftToReverse="1.0"
+        shiftDelay="0.8"
+        switchMode="2.0"
+        switchSeq="0.5"
+        rpmZoneReaction="0.1"
+        rpmSpeedReaction="0.1"
+        />
+
+      <MotorChartMarksPack name="Cars/Demo_VAZ_2106/Demo_CalmData">
+        <marks gear="0" min="0.1375" normLow="0.25" normHigh="0.5" max="0.6875"/>
+      </MotorChartMarksPack>
+
+      <MotorChartMarksPack name="Cars/Demo_VAZ_2106/Demo_AgrData">
+        <marks gear="-1" min="0.02" normLow="0.6" normHigh="0.6875" max="0.9375"/>
+        <marks gear="0" min="0.1375" normLow="0.375" normHigh="0.6875" max="0.9375"/>
+        <marks gear="1" min="0.05" normLow="0.65" normHigh="0.6875" max="0.9375"/>
+        <marks gear="2" min="0.02" normLow="0.5" normHigh="0.6875" max="0.9375"/>
+      </MotorChartMarksPack>
+
+      <PhysXSusDesc
+        name="Cars/Demo_VAZ_2106/Sus/Demo_RSus"
+        travel="25"
+        spring="25000"
+        damper="2000"
+        targetValue="0"/>
+
+      <PhysXSusDesc
+        name="Cars/Demo_VAZ_2106/Sus/Demo_FSus"
+        travel="25"
+        spring="25000"
+        damper="2000"
+        targetValue="0"/>
+
+      <PhysXTireDesc name="Cars/Demo_VAZ_2106/Tire/Demo_FTire">
+        <longFunction
+          extremumSlip="1.0"
+          extremumValue="0.02"
+          asymptoteSlip="2.0"
+          asymptoteValue="0.001"
+          stiffnessFactor="8000"/>
+        <latFunction
+          extremumSlip="0.5"
+          extremumValue="0.02"
+          asymptoteSlip="1.0"
+          asymptoteValue="0.001"
+          stiffnessFactor="5000"/>
+      </PhysXTireDesc>
+
+      <PhysXTireDesc name="Cars/Demo_VAZ_2106/Tire/Demo_RTire">
+        <longFunction
+          extremumSlip="1.0"
+          extremumValue="0.02"
+          asymptoteSlip="2.0"
+          asymptoteValue="0.001"
+          stiffnessFactor="8000"/>
+        <latFunction
+          extremumSlip="0.5"
+          extremumValue="0.02"
+          asymptoteSlip="1.0"
+          asymptoteValue="0.005"
+          stiffnessFactor="5000"/>
+      </PhysXTireDesc>
+
+      <PhysXTireDesc name="Cars/Demo_VAZ_2106/Tire/Demo_IronTire">
+        <longFunction
+          extremumSlip="0.1"
+          extremumValue="0.02"
+          asymptoteSlip="0.2"
+          asymptoteValue="0.01"
+          stiffnessFactor="0.001"/>
+        <latFunction
+          extremumSlip="0.1"
+          extremumValue="0.02"
+          asymptoteSlip="0.2"
+          asymptoteValue="0.01"
+          stiffnessFactor="0.001"/>
+      </PhysXTireDesc>
+
+      <BrakeBlock
+        name="Cars/Demo_VAZ_2106/BrakeBlock/Demo_BrakeBlock"
+        maxBrakeTorque="2500"/>
+
+      <PhysXWheel
+        name="Cars/Demo_VAZ_2106/Wheel/Demo_FRubberWheel"
+        rimRadius="22.7"
+        tireIncRadius="7.1"
+        tireWidth="23.7"
+        mass="1"
+        osnName="All/RimTire/18d/Demo_Rubber"
+        tireName="Cars/Demo_VAZ_2106/Tire/Demo_FTire"/>
+
+      <PhysXWheel
+        name="Cars/Demo_VAZ_2106/Wheel/Demo_RRubberWheel"
+        rimRadius="22.7"
+        tireIncRadius="7.1"
+        tireWidth="23.7"
+        mass="2"
+        osnName="All/RimTire/18d/Demo_Rubber"
+        tireName="Cars/Demo_VAZ_2106/Tire/Demo_RTire"/>
+
+      <PhysXWheel
+        name="Cars/Demo_VAZ_2106/Wheel/Demo_FrontIronWheel"
+        rimRadius="15"
+        tireIncRadius="0"
+        tireWidth="2"
+        mass="0"
+        osnName="All/IronWheel/Demo_Front"
+        tireName="Cars/Demo_VAZ_2106/Tire/Demo_IronTire"/>
+
+      <PhysXWheel
+        name="Cars/Demo_VAZ_2106/Wheel/Demo_BackIronWheel"
+        rimRadius="15"
+        tireIncRadius="0"
+        tireWidth="2"
+        mass="0"
+        osnName="VAZ/All/IronWheel/Demo_Back"
+        tireName="Cars/Demo_VAZ_2106/Tire/Demo_IronTire"/>
+
+      <PhysXWheelNode
+        name="Cars/Demo_VAZ_2106/WheelNode/Demo_Fr_Ri"
+        sus="Cars/Demo_VAZ_2106/Sus/Demo_FSus"
+        rubberWheel="Cars/Demo_VAZ_2106/Wheel/Demo_FRubberWheel"
+        ironWheel="Cars/Demo_VAZ_2106/Wheel/Demo_FrontIronWheel"
+        brakeBlock="Cars/Demo_VAZ_2106/BrakeBlock/Demo_BrakeBlock"
+        rubberWheelIncShift="2.2"
+        ironWheelIncShift="5.8" />
+
+      <PhysXWheelNode
+        name="Cars/Demo_VAZ_2106/WheelNode/Demo_Fr_Le"
+        sus="Cars/Demo_VAZ_2106/Sus/Demo_FSus"
+        rubberWheel="Cars/Demo_VAZ_2106/Wheel/Demo_FRubberWheel"
+        ironWheel="Cars/Demo_VAZ_2106/Wheel/Demo_FrontIronWheel"
+        brakeBlock="Cars/Demo_VAZ_2106/BrakeBlock/Demo_BrakeBlock"
+        rubberWheelIncShift="2.2"
+        ironWheelIncShift="5.8" />
+
+      <PhysXWheelNode
+        name="Cars/Demo_VAZ_2106/WheelNode/Demo_Bk_Ri"
+        sus="Cars/Demo_VAZ_2106/Sus/Demo_RSus"
+        rubberWheel="Cars/Demo_VAZ_2106/Wheel/Demo_RRubberWheel"
+        ironWheel="Cars/Demo_VAZ_2106/Wheel/Demo_BackIronWheel"
+        brakeBlock="Cars/Demo_VAZ_2106/BrakeBlock/Demo_BrakeBlock"
+        rubberWheelIncShift="3.5"
+        ironWheelIncShift="0" />
+
+      <PhysXWheelNode
+        name="Cars/Demo_VAZ_2106/WheelNode/Demo_Bk_Le"
+        sus="Cars/Demo_VAZ_2106/Sus/Demo_RSus"
+        rubberWheel="Cars/Demo_VAZ_2106/Wheel/Demo_RRubberWheel"
+        ironWheel="Cars/Demo_VAZ_2106/Wheel/Demo_BackIronWheel"
+        brakeBlock="Cars/Demo_VAZ_2106/BrakeBlock/Demo_BrakeBlock"
+        rubberWheelIncShift="3.5"
+        ironWheelIncShift="0" />
+
+      <PhysXVehicleBody
+        name="Cars/Demo_VAZ_2106"
+        bodyName="VAZ_2106"
+        mass="1500"
+        addDownForce="1000000"
+        boundMeshName="vaz_2106_convmesh"
+        osnName="Cars/Demo_VAZ_2106"
+        motorName="Cars/Demo_VAZ_2106/Motor/Demo_Motor"
+        gearboxName="Cars/Demo_VAZ_2106/Gearbox/Demo_Gearbox"
+        diffChainName="Cars/Demo_VAZ_2106/DiffChain/Demo_DiffChain"
+        tcsName="Cars/Demo_VAZ_2106/Demo_TCS"
+        solverCount="16"
+        physxMatName="metal">
+        <speedometer revSensorAxis="1" revSensorSide="0" wheelRadius="0.298"/>
+        <massOffset x="0" y="-170" z="0"/>
+        <boundBox x="75" y="60" z="150"/>
+        <axle
+          index="0"
+          maxSteerAngle="30"
+          leftWheelNode="Cars/Demo_VAZ_2106/WheelNode/Demo_Fr_Le"
+          rightWheelNode="Cars/Demo_VAZ_2106/WheelNode/Demo_Fr_Ri"
+          brakeMaxPressValue="1.0">
+          <position x="64.7303" y="-36" z="-145.848" />
+        </axle>
+        <axle
+          index="1"
+          maxSteerAngle="0"
+          leftWheelNode="Cars/Demo_VAZ_2106/WheelNode/Demo_Bk_Le"
+          rightWheelNode="Cars/Demo_VAZ_2106/WheelNode/Demo_Bk_Ri"
+          brakeMaxPressValue="0.5">
+          <position x="69.2086" y="-36" z="98.8395" />
+        </axle>
+      </PhysXVehicleBody>
+      
+      <TCS name="Cars/Demo_VAZ_2106/Demo_TCS" type="CFEED" feedValue="0.1"/>
+
+      <MotorParams
+        name="Cars/Demo_VAZ_2106/Motor/Demo_Motor"
+        stallRPM="500"
+        idleRPM="1200"
+        startRPM="1300"
+        redRPM="6000"
+        maxRPM="8000"
+        maxTorque="350"
+	      maxStarterTorque="80"
+        belowIdleTorqueMult="50000"
+        belowIdleTorqueMultFunc="const"
+        flywheelParams="Cars/Demo_VAZ_2106/Motor/Demo_MFlywheel"
+        torqueLookup="Cars/Demo_VAZ_2106/Motor/Demo_TorqueCurve"
+        dragLookup="Cars/Demo_VAZ_2106/Motor/Demo_DragTorque"/>
+
+      <GearboxParams
+        name="Cars/Demo_VAZ_2106/Gearbox/Demo_Gearbox"
+        type="mech"
+        flywheelParams="Cars/Demo_VAZ_2106/Gearbox/Demo_GFlywheel"
+        dragLookup="Cars/Demo_VAZ_2106/Gearbox/Demo_DragTorque"
+        mechShiftTime="0.02">
+        <directRatios>
+          <ratio value="3.67"/>
+          <ratio value="2.1"/>
+          <ratio value="1.36"/>
+          <ratio value="1.0"/>
+          <ratio value="0.82"/>
+        </directRatios>
+        <reverseRatios>
+          <ratio value="4.0"/>
+        </reverseRatios>
+      </GearboxParams>
+
+      <FlywheelParams
+        name="Cars/Demo_VAZ_2106/Motor/Demo_MFlywheel"
+        mass="10"
+        radius="0.15"/>
+
+      <FlywheelParams
+        name="Cars/Demo_VAZ_2106/Gearbox/Demo_GFlywheel"
+        mass="10"
+        radius="0.05"/>
+
+      <DiffParams
+        name="Cars/Demo_VAZ_2106/Diff/Demo_Diff"
+        diffRatio="3.81"
+        firstNodeRatio="0.5"/>
+      
+      <DiffChain name="Cars/Demo_VAZ_2106/DiffChain/Demo_DiffChain">
+        <node name="Cars/Demo_VAZ_2106/Diff/Demo_Diff" index="1"/>
+      </DiffChain>
+
+      <vbv
+        name="Cars/Demo_VAZ_2106/Motor/Demo_TorqueCurve"
+        startValue="500"
+        incValue="500">
+        <entries>
+          <entry value="0"/>
+          <entry value="0.74"/>
+          <entry value="0.842"/>
+          <entry value="0.925"/>
+          <entry value="0.953"/>
+          <entry value="0.972"/>
+          <entry value="0.99"/>
+          <entry value="1.0"/>
+          <entry value="0.972"/>
+          <entry value="0.907"/>
+          <entry value="0.833"/>
+          <entry value="0.74"/>
+          <entry value="0.648"/>
+          <entry value="0.555"/>
+          <entry value="0.37"/>
+          <entry value="0"/>
+        </entries>
+      </vbv>
+      
+      <vbv
+        name="Cars/Demo_VAZ_2106/Motor/Demo_DragTorque"
+        startValue="20"
+        multValue="0.0001"/>
+
+      <vbv
+        name="Cars/Demo_VAZ_2106/Gearbox/Demo_DragTorque"
+        startValue="0"
+        multValue="0.000001"/>
+    
+    
+    </vehicleTypes>
+
+  </profile>
+  <profile name="user/psx">
+
+  </profile>
+</root>
+
+

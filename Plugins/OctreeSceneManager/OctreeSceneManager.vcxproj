@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{A70732CA-13BC-421B-88E8-1D7012E53710}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>OctreeSceneManager</RootNamespace>
+    <ProjectName>Plugin_OctreeSceneManager</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>$(BOOST_HOME);$(IncludePath)</IncludePath>
+    <IntDir>obj\$(Configuration)\</IntDir>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;OCTREESCENEMANAGER_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;OCTREESCENEMANAGER_EXPORTS;Plugin_OctreeSceneManager_EXPORTS;BOOST_ALL_NO_LIB;OGRE_TERRAINPLUGIN_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include; $(SolutionDir)OgreMain\include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\$(Configuration)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OgreMain.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <ImportLibrary>$(SolutionDir)lib\$(Configuration)\$(ProjectName).lib</ImportLibrary>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\OgreHeightmapTerrainPageSource.h" />
+    <ClInclude Include="include\OgreOctree.h" />
+    <ClInclude Include="include\OgreOctreeCamera.h" />
+    <ClInclude Include="include\OgreOctreeNode.h" />
+    <ClInclude Include="include\OgreOctreePlugin.h" />
+    <ClInclude Include="include\OgreOctreeSceneManager.h" />
+    <ClInclude Include="include\OgreOctreeSceneQuery.h" />
+    <ClInclude Include="include\OgreTerrainPage.h" />
+    <ClInclude Include="include\OgreTerrainPageSource.h" />
+    <ClInclude Include="include\OgreTerrainPrerequisites.h" />
+    <ClInclude Include="include\OgreTerrainRenderable.h" />
+    <ClInclude Include="include\OgreTerrainSceneManager.h" />
+    <ClInclude Include="include\OgreTerrainVertexProgram.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\OgreHeightmapTerrainPageSource.cpp" />
+    <ClCompile Include="src\OgreOctree.cpp" />
+    <ClCompile Include="src\OgreOctreeCamera.cpp" />
+    <ClCompile Include="src\OgreOctreeNode.cpp" />
+    <ClCompile Include="src\OgreOctreePlugin.cpp" />
+    <ClCompile Include="src\OgreOctreeSceneManager.cpp" />
+    <ClCompile Include="src\OgreOctreeSceneManagerDll.cpp" />
+    <ClCompile Include="src\OgreOctreeSceneQuery.cpp" />
+    <ClCompile Include="src\OgreTerrainPage.cpp" />
+    <ClCompile Include="src\OgreTerrainPageSource.cpp" />
+    <ClCompile Include="src\OgreTerrainRenderable.cpp" />
+    <ClCompile Include="src\OgreTerrainSceneManager.cpp" />
+    <ClCompile Include="src\OgreTerrainVertexProgram.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

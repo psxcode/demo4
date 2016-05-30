@@ -1,0 +1,588 @@
+//-----------------------------------------------------
+//DirectX needs this to compensate for jitter
+ps_2_x float2 fixUV( float2 texCoord, float2 texSize )
+{
+	return texCoord - ( float2(0.5,0.5) / texSize );
+}
+//-----------------------------------------------------
+float2 fixUV( float2 texCoord, float2 texSize )
+{
+	return texCoord;
+}
+//-----------------------------------------------------
+void checkShadowDirectLight (
+	sampler2D shadowMap,
+	float3 viewPos,
+	float4x4 invView,
+	float4x4 shadowViewProj,
+	float shadowFarClip,
+	float3 shadowCamPos
+	)
+{
+	float3 worldPos = mul( invView, float4(viewPos,1) ).xyz;
+	float distanceFromLight = length( shadowCamPos - worldPos );
+	float4 shadowProjPos = mul( shadowViewProj, float4(worldPos,1) );
+	shadowProjPos /= shadowProjPos.w;
+	float2 shadowSampleTexCoord = shadowProjPos.xy;
+	float shadowDepth = tex2D( shadowMap, shadowSampleTexCoord ).r;
+	float shadowDistance = shadowDepth * shadowFarClip;
+	clip( shadowDistance - distanceFromLight + 0.1 );
+}
+//-----------------------------------------------------
+void checkShadowNonDirectLight (
+	sampler2D shadowMap,
+	float3 viewPos,
+	float4x4 invView,
+	float4x4 shadowViewProj,
+	float distanceFromLight
+	)
+{
+	float3 worldPos = mul( invView, float4(viewPos,1) ).xyz;
+	float4 shadowProjPos = mul( shadowViewProj, float4(worldPos,1) );
+	shadowProjPos /= shadowProjPos.w;
+	float2 shadowSampleUV = shadowProjPos.xy;
+	float shadowDepth = tex2D( shadowMap, shadowSampleUV ).r;
+	float shadowDistance = shadowDepth * shadowFarClip;
+	clip( shadowDistance - distanceFromLight + 0.1 );
+}
+//-----------------------------------------------------
+#define LIGHT_POINT			1
+#define LIGHT_SPOT			2
+#define LIGHT_DIRECTIONAL	3
+void checkShadow (
+	sampler2D shadowMap,
+	float3 viewPos,
+	float4x4 invView,
+	float4x4 shadowViewProj,
+#if LIGHT_TYPE == LIGHT_DIRECTIONAL
+	float3 shadowCamPos,
+#else
+	float distanceFromLight
+#endif
+	)
+{
+	float3 worldPos = mul( invView, float4(viewPos,1) ).xyz;
+#if LIGHT_TYPE == LIGHT_DIRECTIONAL
+	float distanceFromLight = length( shadowCamPos - worldPos );
+#endif
+	float4 shadowProjPos = mul( shadowViewProj, float4(worldPos,1) );
+	shadowProjPos /= shadowProjPos.w;
+	float2 shadowSampleUV = shadowProjPos.xy;
+	float shadowDepth = tex2D( shadowMap, shadowSampleUV ).r;
+	float shadowDistance = shadowDepth * shadowFarClip;
+	clip( shadowDistance - distanceFromLight + 0.1 );
+}
+//-----------------------------------------------------
+//-----------------------------------------------------
+//-----------------------------------------------------
+//-----------------------------------------------------
+//-----------------------------------------------------
+//-----------------------------------------------------
+// Generic fullscreen quad -- VertexProgram
+void fsQuad_vp (
+	float4 iPos : POSITION,
+	
+	out float4 oPos : POSITION,
+	out float2 oUV : TEXCOORD0,
+	out float3 oRay : TEXCOORD1,
+	
+	uniform float flip
+	)
+{
+	// Clean up inaccuracies
+	iPos.xy = sign( iPos.xy );
+	
+	oPos = float4( iPos.xy, 0, 1 );
+	oPos.y *= flip;
+	
+	// UV in Image-space
+	oUV.x = 0.5 * (1 + iPos.x);
+	oUV.y = 0.5 * (1 - iPos.y);
+	
+	// This ray will be interpolated and will be the ray from the camera
+	// to the far clip plane, per pixel
+	oRay = float3( iPos.xy, 1 );
+}
+//-----------------------------------------------------
+// Light geometry material -- VertexProgram
+void lightGeom_vp (
+	float4 iPos : POSITION,
+	
+	out float4 oPos : POSITION,
+	out float4 oProjPos : TEXCOORD0
+	
+	uniform float4x4 worldViewProj
+	)
+{
+	oPos = mul( worldViewProj, iPos );
+	oProjPos = oPos;
+}
+//-----------------------------------------------------
+void geomGBuffer_vp (
+	float4 iPos : POSITION,
+	float3 iNormal : NORMAL,
+	float2 iUV0 : TEXCOORD0,
+	float3 iTangent : TANGENT0,
+	
+	out float4 oProjPos : POSITION,
+	out float3 oViewPos : TEXCOORD0,
+	out float3 oViewNormal : TEXCOORD1,
+	out float3 oViewTangent : TEXCOORD2,
+	out float3 oViewBinormal : TEXCOORD3,
+	out float2 oUV0 : TEXCOORD4,
+	
+	uniform float4x4 worldViewProj,
+	uniform float4x4 worldView
+	)
+{
+	oProjPos = mul( worldViewProj, iPos );
+	oViewPos = mul( worldView, iPos ).xyz;
+	oViewNormal = mul( worldView, float4(iNormal,0) ).xyz;
+	oViewTangent = mul( worldView, float4(iTangent,0) ).xyz;
+	oViewBinormal = cross( oViewNormal, oViewTangent );
+	oUV0 = iUV0;
+}
+//-----------------------------------------------------
+//-----------------------------------------------------
+//-----------------------------------------------------
+//-----------------------------------------------------
+void lightGeomDirectLight_fp (
+	float2 iUV : TEXCOORD0,
+	float3 iRay : TEXCOORD1,
+	
+	out float4 oColor : COLOR0,
+	
+	uniform sampler2D Tex0 : register(s0),
+	uniform sampler2D Tex1 : register(s1),
+	
+#ifdef IS_SHADOW_CASTER
+	uniform float4x4 invView,
+	uniform float4x4 shadowViewProjMat,
+	uniform sampler2D shadowMap : register(s2),
+	uniform float3 shadowCamPos,
+	uniform float shadowFarClip,
+#endif
+	
+	uniform float3 lightDir,
+	uniform farClipDistance,
+	
+	uniform float4 lightDiffuseColor,
+	uniform float4 lightSpecularColor,
+	uniform float4 lightFalloff,
+	uniform float3 lightPos
+	)
+{
+	float4 a0 = tex2D( Tex0, iUV );
+	float4 a1 = tex2D( Tex1, iUV );
+	
+	float3 color = a0.rgb;
+	float spec_int = a0.a;
+	float depth = a1.w;
+	float3 normal = a1.xyz;
+	
+	float3 viewPos = normalize(iRay) * depth * farClipDistance;
+	float3 objToLightDir = -lightDir;
+	
+#ifdef IS_SHADOW_CASTER
+	checkShadowDirectLight( shadowMap, viewPos, invView, shadowViewProjMat, shadowFarClip, shadowCamPos );
+#endif
+
+	float3 total_light = max( 0.0, dot(objToLightDir, normal) ) * lightDiffuseColor.rgb;
+	
+#ifdef IS_SPECULAR
+	float3 viewDir = -normalize( viewPos );
+	float3 H = normalize( viewDir + objToLightDir );
+	float3 light_spec = pow( dot( normal, H ), 32.0 ) * lightSpecularColor.rgb;
+	
+	total_light += spec_int * light_spec;
+#endif
+
+	oColor = float4( total_light * colour, 0.0 );
+}
+//-----------------------------------------------------
+void lightGeomSpotLight_fp (
+	float4 iProjPos : TEXCOORD0,
+	
+	out float4 oColor : COLOR0,
+	
+	uniform sampler2D Tex0 : register(s0),
+	uniform sampler2D Tex1 : register(s1),
+	
+	uniform float3 lightDir,
+	
+	uniform float4 spotParams,
+	
+	uniform float vpWidth,
+	uniform float vpHeight,
+	uniform float3 farCorner,
+	uniform float flip,
+	
+#ifdef IS_SHADOW_CASTER
+	uniform float4x4 invView,
+	uniform float4x4 shadowViewProjMat,
+	uniform sampler2D shadowMap : register(s2),
+	uniform float3 shadowCamPos,
+	uniform float shadowFarClip,
+#endif
+
+	uniform float farClipDistance,
+	
+	uniform float4 lightDiffuseColor,
+	uniform float4 lightSpecularCOlor,
+	uniform float4 lightFalloff,
+	uniform float3 lightPos
+	)
+{
+	iProjPos /= iProjPos.w
+	float2 texCoord = float2( iProjPos.x, iProjPos.y * -1 * flip ) * 0.5 + 0.5;
+	texCoord = fixUV( texCoord, float2(vpWidth,vpHeight) );
+	float3 ray = float3(iProjPos.x, iProjPos.y * flip, 1) * farCorner;
+	
+	float4 a0 = tex2D( Tex0, texCoord );
+	float4 a1 = tex2D( Tex1, texCoord );
+	
+	float3 color = a0.rgb;
+	float spec_int = a0.a;
+	float depth = a1.w;
+	float3 normal = a1.xyz;
+	
+	float3 viewPos = normalize(ray) * depth * farClipDistance;
+	
+	float3 objToLightVec = lightPos - viewPos;
+	float len_sq = dot( objToLightVec, ObjToLightVec );
+	float len = sqrt( len_sq );
+	float objToLightDir = objToLightVec / len;
+	
+#ifdef IS_SHADOW_CASTER
+	checkShadow( shadowMap, viewPos, invView, shadowViewProjMat, shadowFarClip, len );
+#endif
+
+	float3 total_light = max( 0.0, dot( objToLightDir, normal ) ) * lightDiffuseColor.rgb;
+
+#ifdef IS_SPECULAR
+	float3 viewDir = -normalize( viewPos );
+	float3 H = normalize( viewDir + objToLightDir );
+	float3 light_spec = pow( dot( normal, H ), 32.0 ) * lightSpecularColor;
+	
+	total_light += spec_int * light_spec;
+#endif
+
+#ifdef IS_ATTENUATED
+	clip( lightFalloff.x - len );
+	float attenuation = dot( lightFalloff.yzw, float3( 1.0, len, len_sq ) );
+	total_light /= attenuation;
+#endif
+
+	float spotlightAngle = saturate( dot( lightDir.xyz, -objToLightDir ) );
+	float spotFalloff = saturate( (spotlightAngle - spotParams.x) / (spotParams.y - spotParams.x) );
+	total_light *= (1 - spotFalloff);
+
+	oColor = float4(total_light * color, 0.0);
+}
+//-----------------------------------------------------
+void lightGeomPointLight_fp (
+	float4 iProjPos : TEXCCORD0,
+	
+	out float4 oColor : COLOR0,
+	
+	uniform sampler2D Tex0 : register(s0),
+	uniform asmpler2D Tex1 : register(s1),
+	
+	uniform float vpWidth,
+	uniform float vpHeight,
+	uniform float3 farCorner,
+	uniform float flip,
+	
+#ifdef IS_SHADOW_CASTER
+	uniform float4x4 invView,
+	uniform float4x4 shadowViewProjMat,
+	uniform sampler2D shadowMap : register(s2),
+	uniform float3 shadowCamPos,
+	uniform float shadowFarClip,
+#endif
+	
+	uniform float farClipDistance,
+	
+	uniform float4 lightDiffuseColor,
+	uniform float4 lightSpecularColor,
+	uniform float4 lightFalloff,
+	uniform float3 lightPos
+	)
+{
+	iProjPos /= iProjPos.w;
+	float2 texCoord = float2( iProjPos.x, iProjPos.y * -1 * flip ) * 0.5 + 0.5;
+	texCoord = fixUV( texCoord, float2( vpWidth, vpHeight ) );
+	float3 ray = float3( iProjPos.x, iProjPos.y * flip, 1 ) * farCorner;
+	
+	float4 a0 = tex2D( Tex0, texCoord );
+	float4 a1 = tex2D( Tex1, texCoord );
+	
+	float3 color = a0.rgb;
+	float spec_int = a0.a;
+	float depth = a1.w;
+	float3 normal = a1.xyz;
+	
+	float3 viewPos = normalize(ray) * depth * farClipDistance;
+	
+	float3 objToLightVec = lightPos - viewPos;
+	float len_sq = dot( objToLightVec, objToLightVec );
+	float len = sqrt( len_sq );
+	float3 objToLightDir = objToLightVec / len;
+	
+#ifdef IS_SHADOW_CASTER
+	checkShadow( shadowMap, viewPos, invView, shadowViewProjMat, shadowFarClip , len );
+#endif
+	
+	float3 total_light = max( 0.0, dot( objToLightDir, normal ) ) * lightDiffuseColor.rgb;
+	
+#ifdef IS_SPECULAR
+	float3 viewDir = -normalize( viewPos );
+	float3 H = normalize( viewDir + objToLightDir );
+	float3 light_spec = pow( dot( normal, H ), 32.0 ) * lightSpecularColor.rgb;
+	
+	total_light += spec_int * light_spec;
+#endif
+
+#ifdef IS_ATTENUATED
+	clip( lightFalloff.x - len );
+	float attenuation = dot( lightFalloff.yzw, float3( 1.0, len, len_sq ) );
+	total_light /= attenuation;
+#endif
+
+	oColor = float4(total_light * color, 0.0);
+}
+//-----------------------------------------------------
+/*packs half16 integer part and half16 frac part To float*/
+float pack_int_frac( half2 intFrac )
+{
+	return intFrac.x + clamp( intFrac.y, 0.0h, 0.999h );
+}
+half2 unpack_int_frac( float intFrac )
+{
+	half2 retVal;
+	retVal.y = frac( intFrac );
+	retVal.x = intFrac - retVal.y;
+	return retVal;
+}
+float pack_int01_frac( half2 intFrac )
+{
+	intFrac.x *= 256.0h;
+	return pack_int_frac( intFrac )
+}
+half2 unpack_int01_frac( float intFrac )
+{
+	half2 rv = unpack_int_frac( intFrac );
+	rv.x /= 256.0h;
+	return rv;
+}
+//-----------------------------------------------------
+/*packs 16bit half 0-1 to 2 8bit 0-1 color*/
+half2 pack_16h01__28h01( half pv )
+{
+	return half2( pv, frac( pv * 256.0h ) );
+}
+half unpack_16h01__28h01( half2 upv )
+{
+	const half2 mult( 1.0h, 1.0h/256.0h );
+	return dot( upv, mult );
+}
+//-----------------------------------------------------
+half pack_h0255_h01__8i( half2 pv )
+{
+	return half( floor(pv.x/16.0h)*16.0h + pv.y*15.0h );
+}
+half2 unpack_h0255_h01__8i( half upv )
+{
+	half2 rv;
+	rv.x = floor(upv/16.0h)*16.0h;
+	rv.y = (upv - rv.x) / 15;
+	return rv;
+}
+half pack_2h01__8i( half2 pv )
+{
+	return half( floor(pv.x*15.0h)*16.0h + pv.y*15.0h );
+}
+half2 unpack_2h01__8i( half upv )
+{
+	half2 rv = unpack_h0255_h01__8i( upv );
+	rv.x /= 240.0h;
+	return rv;
+}
+//-----------------------------------------------------
+void writeGBLay01 (
+	float depth,
+	half3 normal,
+	half3 color,
+	half spec_int,
+	half3 light_color,
+	half3 refl_color,
+	half spec_power,
+	half matID,
+	half2 motion,
+
+	out half4 oColor0,
+	out half4 oColor1,
+	out half4 oColor2,
+	out half4 oColor3
+	)
+{
+	oColor0 = half4( normal, depth );
+	
+	oColor1.r = pack_int_frac( matID, color.r );
+	oColor1.g = pack_int01_frac( color.g, color.b );
+	oColor1.b = pack_int_frac( spec_power, spec_int );
+	
+	oColor2 = half4( refl_color, motion.x );
+	
+	oColor3 = half4( light_color, motion.y );
+}
+//-----------------------------------------------------
+void readGBLay01 (
+	half4 iColor0,
+	half4 iColor1,
+	half4 iColor2,
+	half4 iColor3,
+	
+	out float depth,
+	out half3 normal,
+	out half3 color,
+	out half spec_int,
+	out half3 light_color,
+	out half3 refl_color,
+	out half spec_power,
+	out half matID,
+	out half2 motion
+	)
+{
+	depth = iColor0.w;
+	normal = iColor0.xyz;
+	
+	half2 upkColor;
+	upkColor = unpack_int_frac( iColor1.r );
+	matID = upkColor.x;
+	color.r = upkColor.y;
+	upkColor = unpack_int01_frac( iColor1.g );
+	color.gb = upkColor;
+	upkColor = unpack_int_frac( iColor1.b );
+	spec_power = upkColor.x;
+	spec_int = upkColor.y;
+
+	motion = half2( iColor2.a, iColor3.a );
+
+	refl_color = iColor2.rgb;
+	light_color = iColor3.rgb;
+}
+//-----------------------------------------------------
+static const float3 LUMINANCE_VECTOR = float3(0.2125f, 0.7154f, 0.0721f);
+//-----------------------------------------------------
+void writeGBLay2(
+	float depth,
+	half3 normal,
+	half3 color,
+	half spec_int,
+	half3 light_color,
+	half3 refl_color,
+	half spec_pow,
+	
+	out half4 oColor0,
+	out half4 oColor1,
+	out half4 oColor2,
+	out half4 oColor3
+	)
+{
+	half2 encNormal = encode_normal( normal );
+	oColor0 = half4( pack_16h01__28h01( encNormal.x ), pack_16h01__28h01( enc_Normal.y ) );
+
+	half spp_spi = pack_h0255_h01__8i( spec_power, spec_int );
+	oColor1 = half4( color, spp_spi );
+	
+	half refl_lum = dot( refl_color, LUMINANCE_VECTOR );
+	half maxComponent = max( refl_color, max( light_color.r, max( light_color.g, light_color.b ) ) );
+	half Exp = ceil( log2( maxComponent ) );
+	half Intensity = exp2(Exp);
+	oColor2 = half4( pack_16h01__28h01( depth ), refl_lum / Intensity, 0.0h );
+	oColor3 = half4( light_color / Intensity, (Exp+128.0h)/255.0h );
+}
+//-----------------------------------------------------
+void readGBLay2(
+	half4 iColor0,
+	half4 iColor1,
+	half4 iColor2,
+	half4 iColor3,
+	
+	out float depth,
+	out half3 normal,
+	out half3 color,
+	out half spec_int,
+	out half3 light_color,
+	out half3 refl_color,
+	out half spec_pow
+	)
+{
+	depth = unpack_16h01__28h01( iColor2.rg );
+	
+	half2 encNormal = half2( unpack_16h01_28h01(iColor0.rg), unpack_16h01_28h01(iColor0.ba) );
+	normal = decode_normal( encNormal );
+	
+	color = iColor1.rgb;
+	half2 spp_spi = unpack_h0255_h01__8i( iColor1.a );
+	spec_pow = spp_spi.x;
+	spec_int = spp_spi.y;
+	
+	half Intensity = exp2((iColor3.a*255.0h) - 128.0h);
+	refl_color = (iColor2.b * Intensity).xxx;
+	light_color = iColor3.rgb * Intensity;
+}
+//-----------------------------------------------------
+void geomGBufferLay01_fp (
+	float3 iViewPos : TEXCOORD0,
+	float3 iViewNormal : TEXCOORD1,
+	float3 iViewTangent : TEXCOORD2,
+	float3 iViewBinormal : TEXCOORD3,
+	float2 iUV0 : TEXCOORD4,
+	
+	out float4 oColor0 : COLOR0,
+	out float4 oColor1 : COLOR1,
+	out float4 oColor2 : COLOR2,
+	out float4 oColor3 : COLOR3,
+	
+	uniform sampler2D sTexture : register(s0),
+	uniform sampler2D sNormal : register(s1),
+	uniform float cFarDistance
+	)
+{
+	float3 texNormal = tex2D( sNormal, iUV0 );
+	const float3x3 normalRotation = float3x3( iViewTangent, iViewBinormal, iViewNormal );
+	half3 wrtNormal = normalize( mul( texNormal, normalRotation ) );
+	float wrtDepth = length( iViewPos ) / cFarDistance;
+}
+//-----------------------------------------------------
+half2 encode_normal( half3 n )
+{
+	half p = sqrt( n.z*8 + 8 );
+	return half2( n.xy/p + 0.5h );
+}
+//-----------------------------------------------------
+half3 decode_normal( half2 enc )
+{
+	half2 fenc = enc*4 - 2;
+	half f = dot( fenc, fenc );
+	half g = sqrt( 1 - f/4 );
+	return half3( fenc*g, (1 - f/2) );
+}
+//-----------------------------------------------------
+half4 encode_RGBE8( half3 Color )
+{
+	half maxComponent = max( max( Color.r, Color.g ), Color.b );
+	half Exp = ceil( log2(maxComponent) );
+	return half4( Color / exp2(Exp), (Exp+128.0h)/255.0h );
+}
+//-----------------------------------------------------
+half3 decode_RGBE8( half4 Color )
+{
+	half Exp = (Color.a * 255) - 128;
+	return Color.rgb * exp2(Exp);
+}
+//-----------------------------------------------------
+//-----------------------------------------------------
+//-----------------------------------------------------

@@ -1,0 +1,604 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Header Files\GL">
+      <UniqueIdentifier>{7c3c1d8a-6edd-4c85-b475-aea5c00bb224}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\GLX">
+      <UniqueIdentifier>{78fcbc27-b061-4476-9138-3656954bc46d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\gtk">
+      <UniqueIdentifier>{6f8bca56-8404-48c8-aa3d-a2bcc38bff34}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\OSX">
+      <UniqueIdentifier>{d80ec3ea-0672-4e6b-ad4c-22afcbc0c6cc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GLSL">
+      <UniqueIdentifier>{758432a7-4b00-4595-a28e-53a38ae14d3b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GLSL\include">
+      <UniqueIdentifier>{5a2d561a-b882-4fc8-abae-eba86ff87384}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GLSL\src">
+      <UniqueIdentifier>{0229d558-3b38-451c-bf22-946c1104cb8d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GLX">
+      <UniqueIdentifier>{9d748916-c22e-4640-8b3f-bf1b551a67d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\atifs">
+      <UniqueIdentifier>{73720c27-f961-41a7-b83f-319d59229d50}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\atifs\include">
+      <UniqueIdentifier>{19f16674-6222-42c1-a495-ebf2f9d9e735}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\atifs\src">
+      <UniqueIdentifier>{f61708a1-2313-469a-bbf4-9d92697242ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\gtk">
+      <UniqueIdentifier>{fc6c72a6-dcaf-45ff-9a72-138c11b33fab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\nvparse">
+      <UniqueIdentifier>{0022bece-a10f-4b57-b775-ede2056a0b1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\nvparse\winheaders">
+      <UniqueIdentifier>{6b953577-eb5a-4926-9494-0d7561fc7ac9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\OSX">
+      <UniqueIdentifier>{0859f9cb-5c89-4854-b800-eb0e63c436fc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\SDL">
+      <UniqueIdentifier>{b2b32854-e01f-4e9e-aba1-c611f52b81d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\win32">
+      <UniqueIdentifier>{b3b6119c-82fe-4972-a67b-3fcf943ec5f0}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\OgreGLATIFSInit.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreGLContext.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreGLDefaultHardwareBufferManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreGLFBOMultiRenderTarget.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreGLFBORenderTexture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreGLFrameBufferObject.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreGLGpuNvparseProgram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreGLGpuProgram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreGLGpuProgramManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreGLHardwareBufferManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreGLHardwareIndexBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreGLHardwareOcclusionQuery.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreGLHardwarePixelBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreGLHardwareVertexBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreGLPBRenderTexture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreGLPBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreGLPixelFormat.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreGLPlugin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreGLPrerequisites.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreGLRenderSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreGLRenderTexture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreGLRenderToVertexBuffer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreGLSupport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreGLTexture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreGLTextureManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreSDLGLSupport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreSDLPrerequisites.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreSDLWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreWin32Context.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreWin32GLSupport.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreWin32Prerequisites.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreWin32RenderTexture.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OgreWin32Window.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\gl.h">
+      <Filter>Header Files\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\glew.h">
+      <Filter>Header Files\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\glext.h">
+      <Filter>Header Files\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\glxew.h">
+      <Filter>Header Files\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\glxext.h">
+      <Filter>Header Files\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\glxtokens.h">
+      <Filter>Header Files\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\wglew.h">
+      <Filter>Header Files\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GL\wglext.h">
+      <Filter>Header Files\GL</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GLX\OgreGLXContext.h">
+      <Filter>Header Files\GLX</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GLX\OgreGLXGLSupport.h">
+      <Filter>Header Files\GLX</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GLX\OgreGLXRenderTexture.h">
+      <Filter>Header Files\GLX</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GLX\OgreGLXUtils.h">
+      <Filter>Header Files\GLX</Filter>
+    </ClInclude>
+    <ClInclude Include="include\GLX\OgreGLXWindow.h">
+      <Filter>Header Files\GLX</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gtk\OgreGTKGLSupport.h">
+      <Filter>Header Files\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="include\gtk\OgreGTKWindow.h">
+      <Filter>Header Files\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OSX\OgreOSXCarbonContext.h">
+      <Filter>Header Files\OSX</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OSX\OgreOSXCarbonWindow.h">
+      <Filter>Header Files\OSX</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OSX\OgreOSXCGLContext.h">
+      <Filter>Header Files\OSX</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OSX\OgreOSXCocoaContext.h">
+      <Filter>Header Files\OSX</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OSX\OgreOSXCocoaWindow.h">
+      <Filter>Header Files\OSX</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OSX\OgreOSXContext.h">
+      <Filter>Header Files\OSX</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OSX\OgreOSXGLSupport.h">
+      <Filter>Header Files\OSX</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OSX\OgreOSXRenderTexture.h">
+      <Filter>Header Files\OSX</Filter>
+    </ClInclude>
+    <ClInclude Include="include\OSX\OgreOSXWindow.h">
+      <Filter>Header Files\OSX</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GLSL\include\OgreGLSLExtSupport.h">
+      <Filter>Source Files\GLSL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GLSL\include\OgreGLSLGpuProgram.h">
+      <Filter>Source Files\GLSL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GLSL\include\OgreGLSLLinkProgram.h">
+      <Filter>Source Files\GLSL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GLSL\include\OgreGLSLLinkProgramManager.h">
+      <Filter>Source Files\GLSL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GLSL\include\OgreGLSLPreprocessor.h">
+      <Filter>Source Files\GLSL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GLSL\include\OgreGLSLProgram.h">
+      <Filter>Source Files\GLSL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GLSL\include\OgreGLSLProgramFactory.h">
+      <Filter>Source Files\GLSL\include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GLX\OgreGLUtil.h">
+      <Filter>Source Files\GLX</Filter>
+    </ClInclude>
+    <ClInclude Include="src\atifs\include\ATI_FS_GLGpuProgram.h">
+      <Filter>Source Files\atifs\include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\atifs\include\Compiler2Pass.h">
+      <Filter>Source Files\atifs\include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\atifs\include\ps_1_4.h">
+      <Filter>Source Files\atifs\include</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gtk\OgreGLUtil.h">
+      <Filter>Source Files\gtk</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nvparse\winheaders\unistd.h">
+      <Filter>Source Files\nvparse\winheaders</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nvparse\_ps1.0_parser.h">
+      <Filter>Source Files\nvparse</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nvparse\_rc1.0_parser.h">
+      <Filter>Source Files\nvparse</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nvparse\_ts1.0_parser.h">
+      <Filter>Source Files\nvparse</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nvparse\_vs1.0_parser.h">
+      <Filter>Source Files\nvparse</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nvparse\macro.h">
+      <Filter>Source Files\nvparse</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nvparse\nvparse.h">
+      <Filter>Source Files\nvparse</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nvparse\nvparse_errors.h">
+      <Filter>Source Files\nvparse</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nvparse\nvparse_externs.h">
+      <Filter>Source Files\nvparse</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nvparse\ps1.0_program.h">
+      <Filter>Source Files\nvparse</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nvparse\rc1.0_combiners.h">
+      <Filter>Source Files\nvparse</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nvparse\rc1.0_final.h">
+      <Filter>Source Files\nvparse</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nvparse\rc1.0_general.h">
+      <Filter>Source Files\nvparse</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nvparse\rc1.0_register.h">
+      <Filter>Source Files\nvparse</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nvparse\ts1.0_inst.h">
+      <Filter>Source Files\nvparse</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nvparse\ts1.0_inst_list.h">
+      <Filter>Source Files\nvparse</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nvparse\vs1.0_inst.h">
+      <Filter>Source Files\nvparse</Filter>
+    </ClInclude>
+    <ClInclude Include="src\nvparse\vs1.0_inst_list.h">
+      <Filter>Source Files\nvparse</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OSX\OgreGLUtil.h">
+      <Filter>Source Files\OSX</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SDL\OgreGLUtil.h">
+      <Filter>Source Files\SDL</Filter>
+    </ClInclude>
+    <ClInclude Include="src\win32\OgreGLUtil.h">
+      <Filter>Source Files\win32</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\glew.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreGLATIFSInit.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreGLContext.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreGLDefaultHardwareBufferManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreGLEngineDll.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreGLFBOMultiRenderTarget.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreGLFBORenderTexture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreGLFrameBufferObject.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreGLGpuNvparseProgram.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreGLGpuProgram.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreGLGpuProgramManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreGLHardwareBufferManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreGLHardwareIndexBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreGLHardwareOcclusionQuery.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreGLHardwarePixelBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreGLHardwareVertexBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreGLPBRenderTexture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreGLPixelFormat.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreGLPlugin.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreGLRenderSystem.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreGLRenderTexture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreGLRenderToVertexBuffer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreGLSupport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreGLTexture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreGLTextureManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreWin32GLSupport.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreWin32RenderTexture.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OgreWin32Window.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GLSL\src\OgreGLSLExtSupport.cpp">
+      <Filter>Source Files\GLSL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GLSL\src\OgreGLSLGpuProgram.cpp">
+      <Filter>Source Files\GLSL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GLSL\src\OgreGLSLLinkProgram.cpp">
+      <Filter>Source Files\GLSL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GLSL\src\OgreGLSLLinkProgramManager.cpp">
+      <Filter>Source Files\GLSL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GLSL\src\OgreGLSLPreprocessor.cpp">
+      <Filter>Source Files\GLSL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GLSL\src\OgreGLSLProgram.cpp">
+      <Filter>Source Files\GLSL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GLSL\src\OgreGLSLProgramFactory.cpp">
+      <Filter>Source Files\GLSL\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GLX\OgreGLXContext.cpp">
+      <Filter>Source Files\GLX</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GLX\OgreGLXGLSupport.cpp">
+      <Filter>Source Files\GLX</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GLX\OgreGLXRenderTexture.cpp">
+      <Filter>Source Files\GLX</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GLX\OgreGLXWindow.cpp">
+      <Filter>Source Files\GLX</Filter>
+    </ClCompile>
+    <ClCompile Include="src\atifs\src\ATI_FS_GLGpuProgram.cpp">
+      <Filter>Source Files\atifs\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\atifs\src\Compiler2Pass.cpp">
+      <Filter>Source Files\atifs\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\atifs\src\ps_1_4.cpp">
+      <Filter>Source Files\atifs\src</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gtk\OgreGTKGLSupport.cpp">
+      <Filter>Source Files\gtk</Filter>
+    </ClCompile>
+    <ClCompile Include="src\gtk\OgreGTKWindow.cpp">
+      <Filter>Source Files\gtk</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nvparse\_ps1.0_lexer.cpp">
+      <Filter>Source Files\nvparse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nvparse\_ps1.0_parser.cpp">
+      <Filter>Source Files\nvparse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nvparse\_rc1.0_lexer.cpp">
+      <Filter>Source Files\nvparse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nvparse\_rc1.0_parser.cpp">
+      <Filter>Source Files\nvparse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nvparse\_ts1.0_lexer.cpp">
+      <Filter>Source Files\nvparse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nvparse\_ts1.0_parser.cpp">
+      <Filter>Source Files\nvparse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nvparse\_vs1.0_lexer.cpp">
+      <Filter>Source Files\nvparse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nvparse\_vs1.0_parser.cpp">
+      <Filter>Source Files\nvparse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nvparse\avp1.0_impl.cpp">
+      <Filter>Source Files\nvparse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nvparse\nvparse.cpp">
+      <Filter>Source Files\nvparse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nvparse\nvparse_errors.cpp">
+      <Filter>Source Files\nvparse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nvparse\ps1.0__test_main.cpp">
+      <Filter>Source Files\nvparse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nvparse\ps1.0_program.cpp">
+      <Filter>Source Files\nvparse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nvparse\rc1.0_combiners.cpp">
+      <Filter>Source Files\nvparse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nvparse\rc1.0_final.cpp">
+      <Filter>Source Files\nvparse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nvparse\rc1.0_general.cpp">
+      <Filter>Source Files\nvparse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nvparse\ts1.0_inst.cpp">
+      <Filter>Source Files\nvparse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nvparse\ts1.0_inst_list.cpp">
+      <Filter>Source Files\nvparse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nvparse\vcp1.0_impl.cpp">
+      <Filter>Source Files\nvparse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nvparse\vp1.0_impl.cpp">
+      <Filter>Source Files\nvparse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nvparse\vs1.0_inst.cpp">
+      <Filter>Source Files\nvparse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nvparse\vs1.0_inst_list.cpp">
+      <Filter>Source Files\nvparse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\nvparse\vsp1.0_impl.cpp">
+      <Filter>Source Files\nvparse</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OSX\OgreOSXCarbonContext.cpp">
+      <Filter>Source Files\OSX</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OSX\OgreOSXCarbonWindow.cpp">
+      <Filter>Source Files\OSX</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OSX\OgreOSXCGLContext.cpp">
+      <Filter>Source Files\OSX</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OSX\OgreOSXContext.cpp">
+      <Filter>Source Files\OSX</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OSX\OgreOSXRenderTexture.cpp">
+      <Filter>Source Files\OSX</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OSX\OgreOSXWindow.cpp">
+      <Filter>Source Files\OSX</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SDL\OgreSDLGLSupport.cpp">
+      <Filter>Source Files\SDL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SDL\OgreSDLWindow.cpp">
+      <Filter>Source Files\SDL</Filter>
+    </ClCompile>
+    <ClCompile Include="src\win32\OgreWin32Context.cpp">
+      <Filter>Source Files\win32</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="src\nvparse\Makefile.reyacc">
+      <Filter>Source Files\nvparse</Filter>
+    </None>
+    <None Include="src\nvparse\ps1.0_grammar.y">
+      <Filter>Source Files\nvparse</Filter>
+    </None>
+    <None Include="src\nvparse\ps1.0_tokens.l">
+      <Filter>Source Files\nvparse</Filter>
+    </None>
+    <None Include="src\nvparse\rc1.0_grammar.y">
+      <Filter>Source Files\nvparse</Filter>
+    </None>
+    <None Include="src\nvparse\rc1.0_tokens.l">
+      <Filter>Source Files\nvparse</Filter>
+    </None>
+    <None Include="src\nvparse\ts1.0_grammar.y">
+      <Filter>Source Files\nvparse</Filter>
+    </None>
+    <None Include="src\nvparse\ts1.0_tokens.l">
+      <Filter>Source Files\nvparse</Filter>
+    </None>
+    <None Include="src\nvparse\vs1.0_grammar.y">
+      <Filter>Source Files\nvparse</Filter>
+    </None>
+    <None Include="src\nvparse\vs1.0_tokens.l">
+      <Filter>Source Files\nvparse</Filter>
+    </None>
+    <None Include="src\OSX\OgreOSXCocoaContext.mm">
+      <Filter>Source Files\OSX</Filter>
+    </None>
+    <None Include="src\OSX\OgreOSXCocoaWindow.mm">
+      <Filter>Source Files\OSX</Filter>
+    </None>
+    <None Include="src\OSX\OgreOSXGLSupport.mm">
+      <Filter>Source Files\OSX</Filter>
+    </None>
+  </ItemGroup>
+</Project>

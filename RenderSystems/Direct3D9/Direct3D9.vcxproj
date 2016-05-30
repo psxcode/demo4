@@ -1,0 +1,144 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{1C9907F0-9AC2-4B96-8BF0-F3E38033EB5F}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Direct3D9</RootNamespace>
+    <ProjectName>RenderSystem_Direct3D9</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v140</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IntDir>obj\$(Configuration)\</IntDir>
+    <IncludePath>$(BOOST_HOME);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;DIRECT3D9_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>Disabled</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;DIRECT3D9_EXPORTS;BOOST_ALL_NO_LIB;RenderSystem_Direct3D9_EXPORTS;OGRED3DENGINEDLL_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>include; $(SolutionDir)OgreMain\include; $(DXSDK_DIR)include</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(SolutionDir)lib\$(Configuration); $(DXSDK_DIR)lib\x86</AdditionalLibraryDirectories>
+      <ImportLibrary>$(SolutionDir)lib\$(Configuration)\$(ProjectName).lib</ImportLibrary>
+      <AdditionalDependencies>OgreMain.lib;d3d9.lib;d3dx9.lib;DxErr.lib;dxguid.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="include\OgreD3D9Device.h" />
+    <ClInclude Include="include\OgreD3D9DeviceManager.h" />
+    <ClInclude Include="include\OgreD3D9Driver.h" />
+    <ClInclude Include="include\OgreD3D9DriverList.h" />
+    <ClInclude Include="include\OgreD3D9GpuProgram.h" />
+    <ClInclude Include="include\OgreD3D9GpuProgramManager.h" />
+    <ClInclude Include="include\OgreD3D9HardwareBufferManager.h" />
+    <ClInclude Include="include\OgreD3D9HardwareIndexBuffer.h" />
+    <ClInclude Include="include\OgreD3D9HardwareOcclusionQuery.h" />
+    <ClInclude Include="include\OgreD3D9HardwarePixelBuffer.h" />
+    <ClInclude Include="include\OgreD3D9HardwareVertexBuffer.h" />
+    <ClInclude Include="include\OgreD3D9HLSLProgram.h" />
+    <ClInclude Include="include\OgreD3D9HLSLProgramFactory.h" />
+    <ClInclude Include="include\OgreD3D9Mappings.h" />
+    <ClInclude Include="include\OgreD3D9MultiRenderTarget.h" />
+    <ClInclude Include="include\OgreD3D9Plugin.h" />
+    <ClInclude Include="include\OgreD3D9Prerequisites.h" />
+    <ClInclude Include="include\OgreD3D9RenderSystem.h" />
+    <ClInclude Include="include\OgreD3D9RenderWindow.h" />
+    <ClInclude Include="include\OgreD3D9Resource.h" />
+    <ClInclude Include="include\OgreD3D9ResourceManager.h" />
+    <ClInclude Include="include\OgreD3D9Texture.h" />
+    <ClInclude Include="include\OgreD3D9TextureManager.h" />
+    <ClInclude Include="include\OgreD3D9VertexDeclaration.h" />
+    <ClInclude Include="include\OgreD3D9VideoMode.h" />
+    <ClInclude Include="include\OgreD3D9VideoModeList.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\OgreD3D9Device.cpp" />
+    <ClCompile Include="src\OgreD3D9DeviceManager.cpp" />
+    <ClCompile Include="src\OgreD3D9Driver.cpp" />
+    <ClCompile Include="src\OgreD3D9DriverList.cpp" />
+    <ClCompile Include="src\OgreD3D9EngineDll.cpp" />
+    <ClCompile Include="src\OgreD3D9GpuProgram.cpp" />
+    <ClCompile Include="src\OgreD3D9GpuProgramManager.cpp" />
+    <ClCompile Include="src\OgreD3D9HardwareBufferManager.cpp" />
+    <ClCompile Include="src\OgreD3D9HardwareIndexBuffer.cpp" />
+    <ClCompile Include="src\OgreD3D9HardwareOcclusionQuery.cpp" />
+    <ClCompile Include="src\OgreD3D9HardwarePixelBuffer.cpp" />
+    <ClCompile Include="src\OgreD3D9HardwareVertexBuffer.cpp" />
+    <ClCompile Include="src\OgreD3D9HLSLProgram.cpp" />
+    <ClCompile Include="src\OgreD3D9HLSLProgramFactory.cpp" />
+    <ClCompile Include="src\OgreD3D9Mappings.cpp" />
+    <ClCompile Include="src\OgreD3D9MultiRenderTarget.cpp" />
+    <ClCompile Include="src\OgreD3D9Plugin.cpp" />
+    <ClCompile Include="src\OgreD3D9RenderSystem.cpp" />
+    <ClCompile Include="src\OgreD3D9RenderWindow.cpp" />
+    <ClCompile Include="src\OgreD3D9Resource.cpp" />
+    <ClCompile Include="src\OgreD3D9ResourceManager.cpp" />
+    <ClCompile Include="src\OgreD3D9Texture.cpp" />
+    <ClCompile Include="src\OgreD3D9TextureManager.cpp" />
+    <ClCompile Include="src\OgreD3D9VertexDeclaration.cpp" />
+    <ClCompile Include="src\OgreD3D9VideoMode.cpp" />
+    <ClCompile Include="src\OgreD3D9VideoModeList.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

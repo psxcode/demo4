@@ -1,0 +1,224 @@
+
+material ReflMetal
+{
+	technique Default
+	{
+		pass Pass01
+		{
+			ambient 0 0 0 1
+			diffuse 0.301961 0.301961 0.301961 1
+			specular 0 0 0 1 20
+
+			texture_unit CubeMap
+			{
+				texture_alias CubeMap
+				cubic_texture palms_bw_dark.dds combinedUVW
+				tex_address_mode clamp
+				filtering linear linear linear
+				colour_op_ex add src_texture src_current
+				colour_op_multipass_fallback one zero
+				env_map cubic_reflection
+			}
+		}
+
+	}
+
+}
+
+
+
+material CarBody01
+{
+	technique Default
+	{
+		pass Pass01
+		{
+			ambient 0 0 0 1
+			specular 0 0 0 1 80
+
+			texture_unit CubeMap
+			{
+				texture_alias CubeMap
+				cubic_texture palms_bw_sdark.dds combinedUVW
+				tex_address_mode clamp
+				filtering linear linear linear
+				colour_op_ex add src_texture src_current
+				colour_op_multipass_fallback one zero
+				env_map cubic_reflection
+			}
+		}
+
+	}
+
+}
+
+
+
+material Glass
+{
+	technique Default
+	{
+		pass Pass01
+		{
+			ambient 0 0 0 1
+			diffuse 0.698039 0.698039 0.698039 1
+			specular 0 0 0 1 20
+
+			texture_unit CubeMap
+			{
+				texture_alias CubeMap
+				cubic_texture palms_bw_dark.dds combinedUVW
+				tex_address_mode clamp
+				filtering linear linear linear
+				env_map cubic_reflection
+			}
+		}
+
+	}
+
+}
+
+
+
+material BlackPlastic
+{
+	technique Default
+	{
+		pass Pass01
+		{
+			ambient 0 0 0 1
+			diffuse 0.176471 0.176471 0.176471 1
+			specular 1 1 1 1 39.3
+		}
+
+	}
+
+}
+
+
+
+material Lights
+{
+	technique Default
+	{
+		pass Pass01
+		{
+			lighting off
+
+			texture_unit Map#14
+			{
+				texture_alias Map#14
+				texture lights_night.dds
+				tex_address_mode clamp
+				filtering linear linear linear
+			}
+		}
+
+	}
+
+}
+
+
+
+
+material Demo\VAZ_2106\IronWheel\Demo_IronWheel
+{
+	technique Default
+	{
+		pass Pass_01
+		{
+			specular 0 0 0 1 20
+			scene_blend one one_minus_src_alpha
+			alpha_rejection always_pass 230
+			shading phong
+
+			texture_unit IronWheel_Color
+			{
+				texture_alias IronWheel_Color
+				texture 4a46d304.dds
+				tex_address_mode clamp
+				filtering linear linear linear
+			}
+		}
+
+	}
+
+}
+
+
+
+material Tyre
+{
+	technique Default
+	{
+		pass Pass01
+		{
+			ambient 0 0 0 1
+			specular 0 0 0 1 100
+
+			texture_unit Tire_ColorMap
+			{
+				texture_alias Tire_ColorMap
+				texture tyre_tex02.dds
+				filtering linear linear linear
+			}
+		}
+
+	}
+
+}
+
+
+
+material ModRim
+{
+	technique Default
+	{
+		pass Pass01
+		{
+			ambient 0 0 0 1
+			diffuse 0.584314 0.584314 0.584314 1
+			specular 0 0 0 1 80
+
+			texture_unit CubeMap
+			{
+				texture_alias CubeMap
+				cubic_texture palms_bw_sdark.dds combinedUVW
+				tex_address_mode clamp
+				filtering linear linear linear
+				colour_op_ex add src_texture src_current
+				colour_op_multipass_fallback one zero
+				env_map cubic_reflection
+			}
+		}
+
+	}
+
+}
+
+
+
+material LensFlare
+{
+	technique Default
+	{
+		pass Pass
+		{
+			lighting off
+			scene_blend one one_minus_src_alpha
+			depth_check off
+			depth_write off
+
+			texture_unit LensFlare_ColorMap
+			{
+				texture_alias LensFlare_ColorMap
+				texture 9c0f27db.dds
+				filtering linear linear linear
+			}
+		}
+
+	}
+
+}
+
+

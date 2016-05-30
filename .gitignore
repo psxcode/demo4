@@ -1,0 +1,6 @@
+*.db
+*.sdf
+ipch
+obj
+Release
+Debug
